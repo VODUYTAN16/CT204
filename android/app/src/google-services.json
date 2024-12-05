@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1025629629452",
+    "firebase_url": "https://asistant-231c2-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "asistant-231c2",
+    "storage_bucket": "asistant-231c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025629629452:android:f506dae347560eb781d229",
+        "android_client_info": {
+          "package_name": "com.example.appasistant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUNIeqvVEubFl2feK576JimNeAz8Ol4Ts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
