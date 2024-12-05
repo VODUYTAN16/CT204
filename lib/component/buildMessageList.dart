@@ -1,7 +1,8 @@
 import '../index.dart';
 import '../ui/chat_widget.dart';
 
-Widget buildMessageList() {
+Widget buildMessageList(ScrollController scrollController) {
+
   // Kiểm tra xem chat có null hoặc không có tin nhắn
   if (currentChat == null || currentChat!.messages.isEmpty) {
     return Center(child: Text('Let’s chat!'));

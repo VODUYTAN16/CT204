@@ -1,7 +1,7 @@
 import '../../ui/chat_widget.dart';
 import '../../index.dart';
 import 'index.dart';
-Future<void> sendMessage(Function setState) async {
+Future<void> sendMessage(Function setState, ScrollController scrollController) async {
   if (controller.text.isNotEmpty && selectedImages.isEmpty) {
     String userMessage = controller.text;
 
@@ -15,9 +15,9 @@ Future<void> sendMessage(Function setState) async {
       });
     });
 
-    scrollToBottom(); // Cuộn tới cuối danh sách tin nhắn
+    scrollToBottom(scrollController); // Cuộn tới cuối danh sách tin nhắn
     controller.clear(); // Xóa nội dung trong ô nhập tin nhắn
-    botReply(userMessage, setState); // Gọi hàm trả lời của bot (nếu có)
+    botReply(userMessage, setState, scrollController); // Gọi hàm trả lời của bot (nếu có)
 
     await firestore.collection('chats').doc(currentChat?.id).set({
       'messages': FieldValue.arrayUnion([

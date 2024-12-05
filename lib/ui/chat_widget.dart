@@ -6,8 +6,6 @@ Chat? currentChat;
 final TextEditingController controller = TextEditingController();
 final ImagePicker picker = ImagePicker();
 List<Map<String, dynamic>> selectedImages = [];
-final ScrollController scrollController = ScrollController();
-
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -15,6 +13,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class ChatScreenState extends State<ChatScreen> {
+  final ScrollController scrollController = ScrollController();
   @override
   void initState() {
     super.initState();
@@ -144,7 +143,7 @@ class ChatScreenState extends State<ChatScreen> {
                   return Column(
                     children: [
                       FutureBuilder<List<Widget>>(
-                        future: buildChatList(chatListData, context, setState), // Gọi hàm này với danh sách chat
+                        future: buildChatList(chatListData, context, setState,scrollController), // Gọi hàm này với danh sách chat
                         builder: (BuildContext context, AsyncSnapshot<List<Widget>> snapshot) {
                           if (snapshot.connectionState == ConnectionState.waiting) {
                             return Center(child: CircularProgressIndicator());
@@ -170,7 +169,7 @@ class ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: <Widget>[
-          Expanded(child: buildMessageList()),
+          Expanded(child: buildMessageList(scrollController)),
           Container(
             color: Colors.white,
             child: Padding(
@@ -197,9 +196,9 @@ class ChatScreenState extends State<ChatScreen> {
                     icon: Icon(Icons.send),
                     onPressed: (_allImagesUploaded())
                         ? () {
-                      sendMessage(setState);
-                      sendImagesWithCaption(setState);
-                      scrollToBottom();
+                      sendMessage(setState, scrollController);
+                      sendImagesWithCaption(setState, scrollController);
+                      scrollToBottom(scrollController);
                     }
                         : null,
                     color: _allImagesUploaded() ? Colors.blue : Colors.grey,

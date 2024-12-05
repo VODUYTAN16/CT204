@@ -2,7 +2,7 @@ import '../index.dart';
 import '../ui/chat_widget.dart';
 import '../utils/chat/index.dart';
 
-Future<List<Widget>> buildChatList(List<Chat> chatListData,BuildContext context, Function setState) async {
+Future<List<Widget>> buildChatList(List<Chat> chatListData,BuildContext context, Function setState, ScrollController scrollController) async {
   return chatList.reversed.map((chat) {
     bool isCurrentChat = currentChat == chat;
     return Column(
@@ -28,7 +28,7 @@ Future<List<Widget>> buildChatList(List<Chat> chatListData,BuildContext context,
             onTap: () {
               setState(() {
                 currentChat = chat;
-                scrollToBottom();
+                scrollToBottom(scrollController);
               });
               fetchMessages(chat.id, setState);
               Navigator.of(context).pop();

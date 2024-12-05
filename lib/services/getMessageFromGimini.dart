@@ -1,8 +1,8 @@
 import '../ui/chat_widget.dart';
 import '../index.dart';
 import '../utils/chat/index.dart';
-Future<String?> sendToGimini(String userMessage) async {
-  scrollToBottom();
+Future<String?> sendToGimini(String userMessage, ScrollController scrollController) async {
+  scrollToBottom(scrollController);
 
   if (apiKey.isEmpty) {
     print('No API_KEY provided.');

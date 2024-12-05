@@ -1,6 +1,6 @@
 import '../../ui/chat_widget.dart';
 import '../../index.dart';
-void scrollToBottom() {
+void scrollToBottom(ScrollController scrollController) {
   if (scrollController.hasClients) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       scrollController.animateTo(

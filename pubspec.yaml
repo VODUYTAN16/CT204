@@ -45,11 +45,7 @@ flutter_launcher_icons:
 flutter:
   uses-material-design: true
   assets:
-    - assets/icon/app_icon.jpg
-    - assets/icon/pikachu.png
-    - assets/icon/buble.png
     - assets/icon/shirmp.png
-    - assets/icon/shirmp_splash.png
     - assets/icon/shirmp_removebng.png
     - assets/pic1.jpg
     - assets/pic2.jpg

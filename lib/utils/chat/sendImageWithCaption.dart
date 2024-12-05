@@ -1,7 +1,7 @@
 import '../../ui/chat_widget.dart';
 import '../../index.dart';
 import 'index.dart';
-Future<void> sendImagesWithCaption(Function setState) async {
+Future<void> sendImagesWithCaption(Function setState, ScrollController scrollController) async {
 
   if (selectedImages.isNotEmpty && currentChat != null) {
     // Tạo một tin nhắn mới
@@ -24,8 +24,8 @@ Future<void> sendImagesWithCaption(Function setState) async {
       controller.clear();
     });
 
-    scrollToBottom();
-    botReply(controller.text, setState);
+    scrollToBottom(scrollController);
+    botReply(controller.text, setState, scrollController);
 
     await firestore.collection('chats').doc(currentChat!.id).update({
       'messages': FieldValue.arrayUnion([newMessage]),
