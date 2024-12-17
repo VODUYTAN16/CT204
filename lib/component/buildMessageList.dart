@@ -1,8 +1,8 @@
 import '../index.dart';
 import '../ui/chat_widget.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
-Widget buildMessageList(ScrollController scrollController) {
-
+Widget buildMessageList(ScrollController scrollController, bool isTyping) {
   // Kiểm tra xem chat có null hoặc không có tin nhắn
   if (currentChat == null || currentChat!.messages.isEmpty) {
     return Center(child: Text('Let’s chat!'));
@@ -10,41 +10,69 @@ Widget buildMessageList(ScrollController scrollController) {
 
   return ListView.builder(
     controller: scrollController,
-    itemCount: currentChat!.messages.length,
+    itemCount: currentChat!.messages.length + (isTyping ? 1 : 0), // Thêm 1 nếu đang hiển thị hiệu ứng typing
     itemBuilder: (context, index) {
+      if (isTyping && index == currentChat!.messages.length) {
+        // Hiển thị hiệu ứng typing
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width * 0.5, // Chiều rộng tối đa 50%
+              ),
+              decoration: BoxDecoration(
+                color: Color(0xFFFFFFFF),
+                borderRadius: BorderRadius.circular(10.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 0.5,
+                    blurRadius: 5,
+                    offset: Offset(2, 3),
+                  ),
+                ],
+              ),
+              child: LoadingAnimationWidget.waveDots(
+                    size: 30, color:Colors.black,
+                  ),
+                ),
+            ),
+        );
+      }
+
       bool isMe = currentChat!.messages[index]["sender"] == "Me";
 
-      return Padding( // Thêm Padding cho mỗi tin nhắn
+      return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
         child: Align(
           alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
           child: Container(
             padding: EdgeInsets.all(10.0),
             constraints: BoxConstraints(
-              maxWidth: MediaQuery.of(context).size.width * 0.85, // Chiều rộng tối đa 85%
+              maxWidth: MediaQuery.of(context).size.width * 0.85,
             ),
             decoration: BoxDecoration(
               color: isMe ? Color(0xFFC7E4FF) : Color(0xFFFFFFFF),
               borderRadius: BorderRadius.circular(10.0),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.3), // Màu bóng với độ trong suốt
-                  spreadRadius: 0.5, // Độ lan rộng của bóng
-                  blurRadius: 5, // Độ mờ của bóng
-                  offset: Offset(2, 3), // Vị trí bóng (x, y)
+                  color: Colors.grey.withOpacity(0.3),
+                  spreadRadius: 0.5,
+                  blurRadius: 5,
+                  offset: Offset(2, 3),
                 ),
               ],
             ),
-
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Hiển thị văn bản nếu có
                 if (currentChat!.messages[index]["text"] != null)
                   MarkdownBody(
                     data: '${currentChat!.messages[index]["text"]}',
                   ),
-                // Hiển thị hình ảnh
                 if (currentChat!.messages[index]["images"] is List)
                   Column(
                     children: [
@@ -62,13 +90,12 @@ Widget buildMessageList(ScrollController scrollController) {
                                   fit: BoxFit.cover,
                                 ),
                               ),
-
-                              if (image['status'] == 'uploading') // Check if uploading
+                              if (image['status'] == 'uploading')
                                 Positioned.fill(
                                   child: Container(
                                     color: Colors.black.withOpacity(0.5),
                                     child: Center(
-                                      child: CircularProgressIndicator(), // Loading indicator
+                                      child: CircularProgressIndicator(),
                                     ),
                                   ),
                                 ),
@@ -77,7 +104,6 @@ Widget buildMessageList(ScrollController scrollController) {
                         ),
                     ],
                   ),
-                // Hiển thị caption nếu có
                 if (currentChat!.messages[index]["caption"] != null)
                   Padding(
                     padding: EdgeInsets.only(top: 5.0),

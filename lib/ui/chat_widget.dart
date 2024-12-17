@@ -1,3 +1,5 @@
+import 'package:loading_animation_widget/loading_animation_widget.dart';
+
 import '../index.dart';
 import 'index.dart';
 import '../utils/chat/index.dart';
@@ -6,6 +8,7 @@ Chat? currentChat;
 final TextEditingController controller = TextEditingController();
 final ImagePicker picker = ImagePicker();
 List<Map<String, dynamic>> selectedImages = [];
+bool isTyping = false;
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -169,7 +172,7 @@ class ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: <Widget>[
-          Expanded(child: buildMessageList(scrollController)),
+          Expanded(child: buildMessageList(scrollController, isTyping)),
           Container(
             color: Colors.white,
             child: Padding(
@@ -234,7 +237,9 @@ class ChatScreenState extends State<ChatScreen> {
                                 child: Container(
                                   color: Colors.black.withOpacity(0.5),
                                   child: Center(
-                                    child: CircularProgressIndicator(),
+                                    child: LoadingAnimationWidget.dotsTriangle(
+                                      size: 30, color:Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),

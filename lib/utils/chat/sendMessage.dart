@@ -1,6 +1,7 @@
 import '../../ui/chat_widget.dart';
 import '../../index.dart';
 import 'index.dart';
+
 Future<void> sendMessage(Function setState, ScrollController scrollController) async {
   if (controller.text.isNotEmpty && selectedImages.isEmpty) {
     String userMessage = controller.text;
@@ -13,22 +14,19 @@ Future<void> sendMessage(Function setState, ScrollController scrollController) a
         "images": [],
         "captions": null,
       });
+      isTyping = true;
     });
 
     scrollToBottom(scrollController); // Cuộn tới cuối danh sách tin nhắn
     controller.clear(); // Xóa nội dung trong ô nhập tin nhắn
     botReply(userMessage, setState, scrollController); // Gọi hàm trả lời của bot (nếu có)
 
-    await firestore.collection('chats').doc(currentChat?.id).set({
-      'messages': FieldValue.arrayUnion([
-        {
-          "text": userMessage,
-          "sender": "Me",
-          "images": [],
-          "captions": null,
-        }
-      ]),
-    }, SetOptions(merge: true));
+    setState(() {
+      isTyping = false; // Ẩn hiệu ứng typing khi bot trả lời xong
+    });
 
+    await firestore.collection('chats').doc(currentChat?.id).update({
+      'messages': currentChat?.messages
+    });
   }
 }

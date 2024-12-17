@@ -10,8 +10,8 @@ Future<void> sendImagesWithCaption(Function setState, ScrollController scrollCon
       "sender": "Me",
       "images": selectedImages.map((image) {
         return {
-          'url': image['url'], // 'url' là khóa chứa URL hình ảnh
-          'status': 'uploaded', // Đặt trạng thái là 'uploading'
+          "url": image["url"], // 'url' là khóa chứa URL hình ảnh
+          "status": "uploaded", // Đặt trạng thái là 'uploading'
         };
       }).toList(),
       "caption": controller.text.isNotEmpty ? controller.text : null,
@@ -22,13 +22,18 @@ Future<void> sendImagesWithCaption(Function setState, ScrollController scrollCon
       currentChat?.messages.add(newMessage);
       selectedImages.clear();
       controller.clear();
+      isTyping = true;
     });
 
     scrollToBottom(scrollController);
     botReply(controller.text, setState, scrollController);
 
+    setState(() {
+      isTyping = false; // Ẩn hiệu ứng typing khi bot trả lời xong
+    });
+
     await firestore.collection('chats').doc(currentChat!.id).update({
-      'messages': FieldValue.arrayUnion([newMessage]),
+      'messages': currentChat?.messages
     });
   }
 }

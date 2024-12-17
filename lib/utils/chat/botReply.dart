@@ -16,13 +16,6 @@ void botReply(String userMessage, Function setState, ScrollController scrollCont
   scrollToBottom(scrollController);
 
   await firestore.collection('chats').doc(currentChat?.id).update({
-    'messages': FieldValue.arrayUnion([
-      {
-        "text": botResponse,
-        "sender": "Bot",
-        "images": [],
-        "captions": null,
-      }
-    ]),
+    'messages': currentChat?.messages
   });
 }
