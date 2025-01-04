@@ -81,7 +81,7 @@ Widget buildMessageList(ScrollController scrollController, bool isTyping, Functi
                           fontSize: 15.0,
                           color: Colors.black,
                         ),
-                        speed: Duration(milliseconds: 50), // tốc độ gõ
+                        speed: Duration(milliseconds: 25), // tốc độ gõ
                       ),
                     ],
                     totalRepeatCount: 1, // chạy một lần

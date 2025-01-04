@@ -18,6 +18,14 @@ Future<void> sendImagesWithCaption(Function setState, ScrollController scrollCon
       "isTyping": false
     };
 
+    // Ngưng typing toàn bộ
+    currentChat?.messages = currentChat!.messages.map((message) {
+      if (message["isTyping"] == true) {
+        message["isTyping"] = false; // Thay đổi isTyping thành false
+      }
+      return message;
+    }).toList();
+
     // Cập nhật trạng thái trong ứng dụng
     setState(() {
       currentChat?.messages.add(newMessage);
@@ -27,11 +35,11 @@ Future<void> sendImagesWithCaption(Function setState, ScrollController scrollCon
     });
 
     scrollToBottom(scrollController);
-    botReply(controller.text, setState, scrollController);
+    botReply(newMessage, setState, scrollController);
 
-    setState(() {
-      isTyping = false; // Ẩn hiệu ứng typing khi bot trả lời xong
-    });
+    // setState(() {
+    //   isTyping = false; // Ẩn hiệu ứng typing khi bot trả lời xong
+    // });
 
     await firestore.collection('chats').doc(currentChat!.id).update({
       'messages': currentChat?.messages

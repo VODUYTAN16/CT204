@@ -2,19 +2,16 @@ import '../ui/chat_widget.dart';
 import '../index.dart';
 import '../utils/chat/index.dart';
 import 'package:http/http.dart' as http;
-Future<String?> sendToGimini(String userMessage, ScrollController scrollController) async {
+Future<String?> sendToGimini(Object userMessage, ScrollController scrollController) async {
   scrollToBottom(scrollController);
 
   if (currentChat?.messages != null && currentChat!.messages.isNotEmpty) {
-    final url = Uri.parse('http://192.168.1.8:5000/api/v1/messages/send'); // API của bạn
-
+    final url = Uri.parse('http://192.168.1.203:5000/api/v1/messages/send'); // API của bạn
     try {
       // Chuyển currentChat!.messages sang JSON
-      final body = jsonEncode({
-        "messages": currentChat!.messages
+      final body = jsonEncode({ "messages": currentChat?.messages
       });
-
-      print(currentChat!.messages);
+      print('body:' + body);
 
       // Thực hiện POST request
       final response = await http.post(
