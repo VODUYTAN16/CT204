@@ -15,6 +15,7 @@ Future<void> sendImagesWithCaption(Function setState, ScrollController scrollCon
         };
       }).toList(),
       "caption": controller.text.isNotEmpty ? controller.text : null,
+      "isTyping": false
     };
 
     // Cập nhật trạng thái trong ứng dụng

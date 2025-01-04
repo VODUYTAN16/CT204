@@ -1,8 +1,10 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+
 import '../index.dart';
 import '../ui/chat_widget.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
-Widget buildMessageList(ScrollController scrollController, bool isTyping) {
+Widget buildMessageList(ScrollController scrollController, bool isTyping, Function setState) {
   // Kiểm tra xem chat có null hoặc không có tin nhắn
   if (currentChat == null || currentChat!.messages.isEmpty) {
     return Center(child: Text('Let’s chat!'));
@@ -70,8 +72,35 @@ Widget buildMessageList(ScrollController scrollController, bool isTyping) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (currentChat!.messages[index]["text"] != null)
-                  MarkdownBody(
+                  currentChat!.messages[index]["isTyping"] == true
+                      ? AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText(
+                        currentChat!.messages[index]["text"],
+                        textStyle: TextStyle(
+                          fontSize: 15.0,
+                          color: Colors.black,
+                        ),
+                        speed: Duration(milliseconds: 50), // tốc độ gõ
+                      ),
+                    ],
+                    totalRepeatCount: 1, // chạy một lần
+                    displayFullTextOnTap: true,
+                    onFinished: () {
+                      // Cập nhật lại isTyping = false sau khi hoàn thành hiệu ứng
+                      setState(() {
+                        currentChat!.messages[index]["isTyping"] = false;
+                      });
+                    },
+                  )
+                      : MarkdownBody(
                     data: '${currentChat!.messages[index]["text"]}',
+                    styleSheet: MarkdownStyleSheet(
+                      p: TextStyle(
+                        fontSize: 16.0, // Thay đổi size chữ cho đoạn văn bản
+                        color: Colors.black, // Màu chữ (nếu cần)
+                      ),
+                    ),
                   ),
                 if (currentChat!.messages[index]["images"] is List)
                   Column(
@@ -95,7 +124,9 @@ Widget buildMessageList(ScrollController scrollController, bool isTyping) {
                                   child: Container(
                                     color: Colors.black.withOpacity(0.5),
                                     child: Center(
-                                      child: CircularProgressIndicator(),
+                                      child: LoadingAnimationWidget.dotsTriangle(
+                                        size: 30, color:Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -117,6 +148,7 @@ Widget buildMessageList(ScrollController scrollController, bool isTyping) {
           ),
         ),
       );
+
     },
   );
 }

@@ -8,7 +8,16 @@ Future<void> fetchMessages(String chatId, Function setState) async {
 
   if (chatDoc.exists) {
     setState(() {
-      // Cập nhật tin nhắn từ Firestore vào currentChat
-      currentChat!.messages = List.from(chatDoc['messages'] ?? []);
-    });}
+      currentChat!.messages = List<Map<String, dynamic>>.from(
+        (chatDoc['messages'] as List).cast<Map<String, dynamic>>(),
+      ).map((message) {
+        return {
+          ...message,
+          "isTyping": false,
+        };
+      }).toList();
+    });
+  }
+
+
 }

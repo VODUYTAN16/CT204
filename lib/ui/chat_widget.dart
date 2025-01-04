@@ -138,7 +138,9 @@ class ChatScreenState extends State<ChatScreen> {
               stream: _fetchUserChatsStream(userId), // Gọi hàm stream ở đây
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return Center(child: LoadingAnimationWidget.dotsTriangle(
+                    size: 30, color:Colors.white,
+                  ),);
                 } else if (snapshot.hasError) {
                   return Center(child: Text('Có lỗi xảy ra!'));
                 } else if (snapshot.hasData) {
@@ -172,7 +174,7 @@ class ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: <Widget>[
-          Expanded(child: buildMessageList(scrollController, isTyping)),
+          Expanded(child: buildMessageList(scrollController, isTyping, setState)),
           Container(
             color: Colors.white,
             child: Padding(

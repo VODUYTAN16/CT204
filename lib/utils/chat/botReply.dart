@@ -11,6 +11,7 @@ void botReply(String userMessage, Function setState, ScrollController scrollCont
       "sender": "Bot",
       "images": [],
       "captions": [],
+      "isTyping": true
     });
   });
   scrollToBottom(scrollController);

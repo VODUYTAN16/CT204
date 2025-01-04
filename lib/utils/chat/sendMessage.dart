@@ -13,6 +13,7 @@ Future<void> sendMessage(Function setState, ScrollController scrollController) a
         "sender": "Me",
         "images": [],
         "captions": null,
+        "isTyping": false
       });
       isTyping = true;
     });
