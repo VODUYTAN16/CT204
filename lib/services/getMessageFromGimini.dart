@@ -6,7 +6,7 @@ Future<String?> sendToGimini(Object userMessage, ScrollController scrollControll
   scrollToBottom(scrollController);
 
   if (currentChat?.messages != null && currentChat!.messages.isNotEmpty) {
-    final url = Uri.parse('http://192.168.1.203:5000/api/v1/messages/send'); // API của bạn
+    final url = Uri.parse('http://192.168.1.217:5000/api/v1/messages/send'); // API của bạn
     try {
       // Chuyển currentChat!.messages sang JSON
       final body = jsonEncode({ "messages": currentChat?.messages
@@ -26,7 +26,6 @@ Future<String?> sendToGimini(Object userMessage, ScrollController scrollControll
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         print(data);
-        print('Phản hồi từ server: ${data['answer']}');
         if (data['answer'] != null && data['answer'].isNotEmpty) {
           return data['answer'];
         } else {
