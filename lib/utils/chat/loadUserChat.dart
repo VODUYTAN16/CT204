@@ -2,8 +2,7 @@ import '../../ui/chat_widget.dart';
 import '../../index.dart';
 import 'index.dart';
 Future<void> loadUserChats(Function setState) async {
-  List<Chat> userChats = await fetchUserChats(
-      userId); // Gọi hàm lấy danh sách chat
+  List<Chat> userChats = await fetchUserChats(setState); // Gọi hàm lấy danh sách chat
   print(userChats);
   setState(() {
     chatList = userChats; // Cập nhật danh sách chat

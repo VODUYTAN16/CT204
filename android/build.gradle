@@ -1,11 +1,11 @@
 buildscript {
-    ext.kotlin_version = '1.7.10' // Cập nhật phiên bản Kotlin nếu cần
+    ext.kotlin_version = '1.9.0' // Cập nhật phiên bản Kotlin nếu cần
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.1' // Cập nhật phiên bản Gradle
+        classpath 'com.android.tools.build:gradle:8.6.1' // Cập nhật phiên bản Gradle
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.4.2' // Cập nhật phiên bản Google Services
     }

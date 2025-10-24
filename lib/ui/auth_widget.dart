@@ -3,7 +3,7 @@ import 'index.dart';
 import '../utils/auth/index.dart';
 
 final FirebaseAuth auth = FirebaseAuth.instance;
-final GoogleSignIn googleSignIn = GoogleSignIn();
+// final GoogleSignIn googleSignIn = GoogleSignIn();
 // final FirebaseFirestore firestore = FirebaseFirestore.instance;
 final TextEditingController usernameController = TextEditingController();
 final TextEditingController passwordController = TextEditingController();
@@ -26,10 +26,10 @@ class AuthScreenState extends State<AuthScreen> {
 
 
     if (isPhoneLogin) {
-      // Chuyển đổi số điện thoại sang định dạng E.164
-      String formattedPhoneNumber = '+84${username.substring(1)}'; // Bỏ số 0 đầu và thêm +84
-      // Đăng nhập/Đăng ký bằng số điện thoại
-      await submitPhoneLogin(formattedPhoneNumber, context);
+      // // Chuyển đổi số điện thoại sang định dạng E.164
+      // String formattedPhoneNumber = '+84${username.substring(1)}'; // Bỏ số 0 đầu và thêm +84
+      // // Đăng nhập/Đăng ký bằng số điện thoại
+      // await submitPhoneLogin(formattedPhoneNumber, context);
     } else {
       // Đăng nhập/Đăng ký bằng email
       await submitEmailLogin(username, password, context);
@@ -39,7 +39,7 @@ class AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFFE9F5F2),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -99,9 +99,9 @@ class AuthScreenState extends State<AuthScreen> {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Tìm ra cách thức nuôi tôm hiệu quả với kiến thức từ chuyên gia',
+                  'Trò chuyện cùng nhóm 3 người chúng tôi!',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -201,7 +201,7 @@ class AuthScreenState extends State<AuthScreen> {
                 Text(
                   'Bằng cách đăng nhập, bạn đồng ý với Điều khoản Dịch vụ của chúng tôi và xác nhận rằng bạn đã đọc Chính sách quyền riêng tư của chúng tôi. Thông báo tại bộ sưu tập.',
                   style: TextStyle(
-                    color: Colors.grey,
+                    color: Colors.black,
                     fontSize: 12,
                   ),
                   textAlign: TextAlign.center,

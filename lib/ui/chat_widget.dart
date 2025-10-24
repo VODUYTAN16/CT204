@@ -1,5 +1,5 @@
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-
+import '../component/builChatList.dart';
 import '../index.dart';
 import 'index.dart';
 import '../utils/chat/index.dart';
@@ -49,6 +49,7 @@ class ChatScreenState extends State<ChatScreen> {
       drawer: Drawer(
         backgroundColor: Color(0xFFEFF3F5),
         child: ListView(
+          shrinkWrap: true,
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
@@ -134,40 +135,38 @@ class ChatScreenState extends State<ChatScreen> {
               ],
             ),
             Divider(),
-            StreamBuilder<List<Chat>>(
-              stream: _fetchUserChatsStream(userId), // Gọi hàm stream ở đây
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: LoadingAnimationWidget.dotsTriangle(
-                    size: 30, color:Colors.white,
-                  ),);
-                } else if (snapshot.hasError) {
-                  return Center(child: Text('Có lỗi xảy ra!'));
-                } else if (snapshot.hasData) {
-                  final chatListData = snapshot.data!;
-                  return Column(
-                    children: [
-                      FutureBuilder<List<Widget>>(
-                        future: buildChatList(chatListData, context, setState,scrollController), // Gọi hàm này với danh sách chat
-                        builder: (BuildContext context, AsyncSnapshot<List<Widget>> snapshot) {
-                          if (snapshot.connectionState == ConnectionState.waiting) {
-                            return Center(child: CircularProgressIndicator());
-                          } else if (snapshot.hasError) {
-                            return Center(child: Text('Error: ${snapshot.error}'));
-                          } else if (snapshot.hasData) {
-                            return Column(
-                              children: snapshot.data!,
-                            );
-                          } else {
-                            return Center(child: Text('No chats available'));
-                          }
-                        },
-                      ),
-                    ],
-                  );
-                }
-                return Center(child: Text('Không có chat nào!'));
-              },
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.5, // hoặc 400, 500 tuỳ ý
+              child: FutureBuilder<List<Chat>>(
+                future: fetchUserChats(setState),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasError) {
+                    return Center(child: Text('Có lỗi xảy ra!'));
+                  } else if (snapshot.hasData) {
+                    final chatListData = snapshot.data!;
+                    return FutureBuilder<List<Widget>>(
+                      future: buildChatList(chatListData, context, setState, scrollController),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          return Center(child: CircularProgressIndicator());
+                        } else if (snapshot.hasError) {
+                          return Center(child: Text('Error: ${snapshot.error}'));
+                        } else if (snapshot.hasData) {
+                          return ListView(
+                            shrinkWrap: true,
+                            children: snapshot.data!,
+                          );
+                        } else {
+                          return Center(child: Text('No chats available'));
+                        }
+                      },
+                    );
+                  }
+                  return Center(child: Text('Không có chat nào!'));
+                },
+              ),
             ),
           ],
         ),
@@ -216,6 +215,7 @@ class ChatScreenState extends State<ChatScreen> {
             Container(
               height: 100,
               child: ListView.builder(
+                shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemCount: selectedImages.length,
                 itemBuilder: (context, index) {
@@ -272,14 +272,4 @@ class ChatScreenState extends State<ChatScreen> {
       ),
     );
   }
-}
-
-// Thêm phương thức để lấy stream từ Firestore
-Stream<List<Chat>> _fetchUserChatsStream(String userId) {
-  return FirebaseFirestore.instance.collection('chats')
-      .where('userId', isEqualTo: userId) // Thay đổi điều kiện nếu cần
-      .snapshots()
-      .map((snapshot) => snapshot.docs
-      .map((doc) => Chat.fromDocument(doc)) // Giả sử bạn có phương thức để tạo Chat từ Document
-      .toList());
 }

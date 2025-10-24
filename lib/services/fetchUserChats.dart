@@ -1,46 +1,88 @@
-import '../ui/chat_widget.dart';
-import '../index.dart';
-import '../utils/chat/index.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import '../globalvariety.dart';
+import '../crypto_utils.dart';
+import '../utils/chat/index.dart'; // Import mô hình Chat của bạn
 
-Future<List<Chat>> fetchUserChats(String userId) async {
+Future<List<Chat>> fetchUserChats(Function setState) async {
   try {
-    // Lấy thông tin người dùng từ Firestore
-    DocumentSnapshot userDoc = await firestore.collection('users').doc(userId).get();
-    if (userDoc['status'] != null) {
-      // Kiểm tra nếu 'status' là một chuỗi và có giá trị 'admin'
-      isAdmin = userDoc['status'].toString() == 'admin';
-    }
+    final response = await http.get(
+      Uri.parse('${apiBaseUrl}/chatlist/'),
+    );
 
+    if (response.statusCode == 200) {
+      final List<dynamic> chatData = jsonDecode(response.body);
 
-    List<Chat> userChats = [];
-
-    if (userDoc.exists) {
-      // Lấy danh sách chatId từ trường listChat
-      List<dynamic> chatIds = userDoc['listChat'] ?? [];
-
-      // Lấy thông tin chi tiết của các chat một lần
-      List<DocumentSnapshot> chatDocs = await Future.wait(
-        chatIds.map((chatId) async {
-          return await firestore.collection('chats').doc(chatId).get();
-        }),
-      );
-
-      // Lặp qua từng chatDoc để tạo danh sách chat
-      for (DocumentSnapshot chatDoc in chatDocs) {
-        if (chatDoc.exists) {
-          userChats.add(Chat(
-            id: chatDoc.id, // Sử dụng id tài liệu Firestore
-            title: chatDoc['title'], // Tiêu đề của chat
-            messages: List.from(chatDoc['messages'] ?? []), // Danh sách tin nhắn (nếu có)
-            isEditing: false, // Mặc định là không chỉnh sửa
-          ));
-        }
+      // ✅ Lấy private key đã lưu
+      final privateKeyPem = await getPrivateKey(userId);
+      if (privateKeyPem == null) {
+        print('⚠️ Không tìm thấy private key cho userId: $userId');
+        return [];
       }
-    }
 
-    return userChats;
+      // ✅ Duyệt qua từng chat
+      List<Chat> userChats = [];
+
+      for (var chatJson in chatData) {
+        List<Map<String, dynamic>> messages = [];
+
+        // ✅ Duyệt qua từng tin nhắn trong chat
+        if (chatJson['messages'] != null) {
+          for (var msg in chatJson['messages']) {
+            final Map<String, dynamic> message = Map<String, dynamic>.from(msg);
+
+            try {
+              final List<dynamic> encryptAesList = message['encryptAes'] ?? [];
+
+              // ✅ Tìm đúng encrypted AES key cho userId hiện tại
+              final encryptedAesItem = encryptAesList.firstWhere(
+                    (item) => item['userId'] == userId,
+                orElse: () => null,
+              );
+
+              if (encryptedAesItem != null) {
+                final encryptedAesKey = encryptedAesItem['encryptedAesKey'];
+
+                // ✅ Giải mã AES key bằng private RSA key
+                final aesKey =
+                await RSAUtil.decryptKey(encryptedAesKey, privateKeyPem);
+
+                // ✅ Giải mã text bằng AES key
+                final cipherText = message['text'];
+                final decryptedText =
+                await AESUtil.decrypt(cipherText, aesKey);
+
+                message['text'] = decryptedText;
+              } else {
+                print(
+                    '⚠️ Không tìm thấy encrypted AES key cho userId: $userId trong tin nhắn.');
+                message['text'] = '[Không tìm thấy khóa AES]';
+              }
+            } catch (e) {
+              print('⚠️ Lỗi khi giải mã tin nhắn: $e');
+              message['text'] = '[Lỗi giải mã]';
+            }
+
+            messages.add(message);
+          }
+        }
+
+        // ✅ Thêm vào danh sách chat
+        userChats.add(Chat(
+          id: chatJson['id'],
+          title: chatJson['title'],
+          messages: messages,
+          isEditing: false,
+        ));
+      }
+
+      print('✅ Giải mã hoàn tất tất cả tin nhắn trong các chat');
+      return userChats;
+    } else {
+      throw Exception('❌ Lỗi khi tải danh sách chat: ${response.statusCode}');
+    }
   } catch (e) {
-    print("Lỗi khi lấy danh sách chat: $e");
-    return []; // Trả về danh sách rỗng trong trường hợp có lỗi
+    print('⚠️ Lỗi khi lấy danh sách chat: $e');
+    return [];
   }
 }

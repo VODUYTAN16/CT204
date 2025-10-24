@@ -1,3 +1,5 @@
+import 'package:http/http.dart' as http;
+
 import '../index.dart';
 import '../ui/chat_widget.dart';
 import '../utils/chat/index.dart';
@@ -45,7 +47,16 @@ Future<List<Widget>> buildChatList(List<Chat> chatListData,BuildContext context,
                     setState(() {
                       chatList.remove(chat);
                     });
-                    await firestore.collection('chats').doc(chat.id).delete();
+                    final response = await http.delete(
+                      Uri.parse('${apiBaseUrl}/deleteChat/${chat.id}'),
+                    );
+
+                    if (response.statusCode == 200) {
+                      print('Đã xóa chat thành công');
+                    } else {
+                      print('Lỗi xóa chat: ${response.body}');
+                    }
+
                   } else {
                     // Hiển thị thông báo không thể xóa bằng Overlay
                     final overlay = Overlay.of(context);
