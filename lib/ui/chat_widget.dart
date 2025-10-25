@@ -30,34 +30,48 @@ class ChatScreenState extends State<ChatScreen> {
 
   Future<void> _bootstrap() async {
     await loadUserChats(setState);      // bỏ tham số ws
+    scrollToBottom(scrollController);
     // nếu bạn muốn chắc chắn đã subscribe ngay tại đây:
     final id = currentChat?.id;
     if (id != null) wsSingleton.subscribe(id);
   }
 
   void _onWsEvent(Map evt) async {
-    // if (evt['type'] != 'message') return;
-    // if (evt['chatId'] != currentChat?.id) return;
-    //
-    // final msg = Map<String, dynamic>.from(evt['message']);
+    try{
 
-    // final privateKeyPem = await getPrivateKey(userId);
-    // if (privateKeyPem == null) return;  // phòng thủ
-    //
-    // final encForMe = (msg['encryptAes'] as List?)?.cast<Map>()
-    //     .firstWhere((e) => e['userId'] == userId, orElse: () => {});
-    // if (encForMe!.isNotEmpty) {
-    //   final aesKey = await RSAUtil.decryptKey(encForMe['encryptedAesKey'], privateKeyPem);
-    //   msg['text'] = await AESUtil.decrypt(msg['text'], aesKey);
-    // } else {
-    //   msg['text'] = '[Không có khóa AES cho bạn]';
-    // }
+      if (evt['type'] != 'message') return;
+      if (evt['chatId'] != currentChat?.id) return;
 
-    // setState(() {
-    //   final exists = currentChat!.messages.any((m) => m['_id'] == msg['_id']);
-    //   if (!exists) currentChat!.messages.add(msg);
-    // });
+      final msg = Map<String, dynamic>.from(evt['message']);
+      print("////////////////////////////////////////////////websocket//////////////////////////////");
+      print(msg);
+      print(msg['sender']);
+      // 🟢 Thêm điều kiện này để bỏ qua tin nhắn do chính mình gửi
+      if (msg['sender'] == userId) return;
+
+      final privateKeyPem = await getPrivateKey(userId);
+      if (privateKeyPem == null) return;  // phòng thủ
+
+      final encForMe = (msg['encryptAes'] as List?)?.cast<Map>()
+          .firstWhere((e) => e['userId'] == userId, orElse: () => {});
+
+      if (encForMe!.isNotEmpty) {
+        final aesKey = await RSAUtil.decryptKey(encForMe['encryptedAesKey'], privateKeyPem);
+        msg['text'] = await AESUtil.decrypt(msg['text'], aesKey);
+      } else {
+        msg['text'] = '[Không có khóa AES cho bạn]';
+      }
+      scrollToBottom(scrollController);
+
+      setState(() {
+        final exists = currentChat!.messages.any((m) => m['_id'] == msg['_id']);
+        if (!exists) currentChat!.messages.add(msg);
+      });
+    }
+    catch(e){print('Lỗi _onWsEvent');}
+
   }
+
   // Hàm kiểm tra tất cả ảnh đều đã được upload
   bool _allImagesUploaded() {
     return selectedImages.every((img) => img['status'] == 'uploaded');

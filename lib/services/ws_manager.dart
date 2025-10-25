@@ -2,8 +2,10 @@
 import 'dart:convert';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
+import '../globalvariety.dart';
+
 class WsManager {
-  final String baseWs; // ví dụ: ws://10.0.2.2:5000 (Android emulator), ws://localhost:5000 (iOS)
+  final String baseWs;
   WebSocketChannel? _ch;
   String? _currentRoom;
 
@@ -15,11 +17,25 @@ class WsManager {
   }) {
     _ch ??= WebSocketChannel.connect(Uri.parse(baseWs));
     _ch!.stream.listen((raw) {
-      try { onEvent(jsonDecode(raw as String)); } catch (_) {}
-    }, onError: onError, onDone: () { _ch = null; });
+      try {
+        final data = raw is String ? raw : utf8.decode(raw);
+        print('📩 WS raw: $data');
+        final evt = jsonDecode(data);
+        onEvent(evt);
+      } catch (e) {
+        print('❌ WS decode error: $e');
+      }
+    }, onError: (err) {
+      print('❌ WS stream error: $err');
+      if (onError != null) onError(err);
+    }, onDone: () {
+      print('🔌 WS closed');
+      _ch = null;
+    });
   }
 
   void subscribe(String chatId) {
+    print('da subscribe: ${chatId} //////////////////////////////////////');
     if (_ch == null) return;
     if (_currentRoom != null && _currentRoom != chatId) {
       _ch!.sink.add(jsonEncode({"type":"unsubscribe","chatId":_currentRoom}));
