@@ -89,7 +89,11 @@ class ProfilePage extends StatelessWidget {
 
 Future<void> logout() async {
   try {
-    await FirebaseAuth.instance.signOut(); // Đăng xuất từ Firebase
+    await FirebaseAuth.instance.signOut(); // Đăng xuất từ
+    // Ngắt WebSocket để tránh rò rỉ kết nối và sai phòng
+    try {
+      wsSingleton.dispose();     // hoặc wsSingleton.close();
+    } catch (_) {}
     // Thực hiện các hành động khác nếu cần sau khi đăng xuất
   } catch (e) {
     // Xử lý lỗi nếu có

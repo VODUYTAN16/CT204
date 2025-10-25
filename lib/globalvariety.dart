@@ -1,6 +1,8 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'package:web_socket_channel/web_socket_channel.dart';
+import 'services/ws_manager.dart';
+import './services/ws_manager.dart';
 class Chat {
    String id;
    String title;
@@ -37,4 +39,13 @@ const String apiKey = 'AIzaSyA_INlI-31sF05njnggLQQ8oiTRORLqhvI';
 
 late String privateKey_RSA ;
 
-const String apiBaseUrl = 'http://192.168.1.53:5000';
+const String apiBaseUrl = 'http://10.13.133.191:5000';
+const String baseWs = 'ws://10.13.133.191:5000';
+
+
+late final WsManager wsSingleton;
+
+Future<void> initWs() async {
+  wsSingleton = WsManager ('${baseWs}');
+  // wsSingleton.connect(onEvent: (evt) { /* xử lý global hoặc delegate về màn hình */ });
+}

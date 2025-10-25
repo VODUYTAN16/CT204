@@ -27,14 +27,44 @@ Future<List<Widget>> buildChatList(List<Chat> chatListData,BuildContext context,
               decoration: InputDecoration(hintText: 'Nhập tiêu đề mới'),
             )
                 : Text(chat.title),
-            onTap: () {
-              setState(() {
-                currentChat = chat;
-                scrollToBottom(scrollController);
-              });
-              fetchMessages(chat.id, setState);
-              Navigator.of(context).pop();
-            },
+
+    // Giả sử bạn có WsManager ws; và currentChat có thể null lần đầu
+    onTap: () async {
+    final String? prevId = currentChat?.id;
+    final String newId = chat.id;
+
+    // Nếu bấm lại đúng phòng đang mở thì chỉ đóng drawer/menu
+    if (prevId == newId) {
+    Navigator.of(context).pop();
+    return;
+    }
+
+    // 1) Cập nhật phòng hiện tại cho UI phản hồi ngay
+    setState(() {
+    currentChat = chat;
+    currentChat!.messages = [];        // tùy chọn: xóa tạm để tránh chồng nội dung
+    });
+
+    // 2) Tải lịch sử phòng mới
+    await fetchMessages(newId, setState);
+
+    // 3) Chuyển subscription WebSocket sang phòng mới (không đóng kết nối)
+    wsSingleton.subscribe(newId);
+
+    // 4) Cuộn xuống và đóng menu
+    scrollToBottom(scrollController);
+    Navigator.of(context).pop();
+    },
+
+    // onTap: () {
+            //   setState(() {
+            //     currentChat = chat;
+            //     scrollToBottom(scrollController);
+            //   });
+            //   fetchMessages(chat.id, setState);
+            //   Navigator.of(context).pop();
+            // },
+
             trailing: PopupMenuButton<String>(
               icon: Icon(Icons.more_horiz),
               onSelected: (value) async {

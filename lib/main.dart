@@ -15,7 +15,7 @@ void main() async {
     appleProvider: AppleProvider.appAttest,
   );
   FirebaseAuth.instance.setLanguageCode('vi'); // Thiết lập ngôn ngữ Tiếng Việt
-
+  await initWs();
   runApp(ChatApp());
 }
 

@@ -20,9 +20,44 @@ class ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     super.initState();
-    loadUserChats(setState); // Gọi phương thức để tải danh sách chat
+
+    // 1) Kết nối WS một lần qua singleton (idempotent: connect sẽ tự bỏ qua nếu đã mở)
+    wsSingleton.connect(onEvent: (evt) => _onWsEvent(evt));
+
+    // 2) Tải danh sách + subscribe phòng đầu tiên (loadUserChats không cần truyền ws)
+    _bootstrap();
   }
 
+  Future<void> _bootstrap() async {
+    await loadUserChats(setState);      // bỏ tham số ws
+    // nếu bạn muốn chắc chắn đã subscribe ngay tại đây:
+    final id = currentChat?.id;
+    if (id != null) wsSingleton.subscribe(id);
+  }
+
+  void _onWsEvent(Map evt) async {
+    // if (evt['type'] != 'message') return;
+    // if (evt['chatId'] != currentChat?.id) return;
+    //
+    // final msg = Map<String, dynamic>.from(evt['message']);
+
+    // final privateKeyPem = await getPrivateKey(userId);
+    // if (privateKeyPem == null) return;  // phòng thủ
+    //
+    // final encForMe = (msg['encryptAes'] as List?)?.cast<Map>()
+    //     .firstWhere((e) => e['userId'] == userId, orElse: () => {});
+    // if (encForMe!.isNotEmpty) {
+    //   final aesKey = await RSAUtil.decryptKey(encForMe['encryptedAesKey'], privateKeyPem);
+    //   msg['text'] = await AESUtil.decrypt(msg['text'], aesKey);
+    // } else {
+    //   msg['text'] = '[Không có khóa AES cho bạn]';
+    // }
+
+    // setState(() {
+    //   final exists = currentChat!.messages.any((m) => m['_id'] == msg['_id']);
+    //   if (!exists) currentChat!.messages.add(msg);
+    // });
+  }
   // Hàm kiểm tra tất cả ảnh đều đã được upload
   bool _allImagesUploaded() {
     return selectedImages.every((img) => img['status'] == 'uploaded');
@@ -117,6 +152,12 @@ class ChatScreenState extends State<ChatScreen> {
                       final String? newChatTitle = await showNewChatDialog(context);
                       if (newChatTitle != null && newChatTitle.isNotEmpty) {
                         await createNewChat(newChatTitle, setState);
+                        // createNewChat đã set currentChat
+                        final String? newId = currentChat?.id;
+                        if (newId != null) {
+                          await fetchMessages(newId, setState); // thường rỗng
+                          wsSingleton.subscribe(newId);         // subscribe phòng mới
+                        }
                         Navigator.of(context).pop();
                       }
                     },

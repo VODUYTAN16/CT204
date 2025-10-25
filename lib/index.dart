@@ -15,6 +15,8 @@ export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:namer_app/firebase_options.dart';
 export 'globalvariety.dart';
+export './services/ws_manager.dart';
+export './crypto_utils.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 // export 'package:flutter/cupertino.dart';
 export 'package:flutter/material.dart';
