@@ -45,8 +45,8 @@ Widget buildMessageList(ScrollController scrollController, bool isTyping, Functi
         );
       }
 
-      bool isMe = currentChat!.messages[index]["sender"] == userId;
-
+      bool isMe = currentChat!.messages[index]["senderId"] == userId;
+      print(currentChat!.messages);
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
         child: Align(

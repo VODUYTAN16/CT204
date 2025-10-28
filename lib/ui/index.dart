@@ -5,3 +5,4 @@ export 'auth_widget.dart';
 export 'admin_widget.dart';
 export 'chat_widget.dart';
 export 'splash_widget.dart';
+export 'SocialDrawer.dart';

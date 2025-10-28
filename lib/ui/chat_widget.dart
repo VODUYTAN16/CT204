@@ -1,3 +1,4 @@
+import 'package:http/http.dart' as http;
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../component/builChatList.dart';
 import '../index.dart';
@@ -5,6 +6,10 @@ import 'index.dart';
 import '../utils/chat/index.dart';
 late List<Chat> chatList = [];
 Chat? currentChat;
+// Dùng cho direct chat: avatar của người bên kia để hiển thị trên AppBar
+String? currentChatPeerAvatarPath;
+// Đánh dấu loại hội thoại
+bool currentChatIsGroup = false;
 final TextEditingController controller = TextEditingController();
 final ImagePicker picker = ImagePicker();
 List<Map<String, dynamic>> selectedImages = [];
@@ -17,59 +22,134 @@ class ChatScreen extends StatefulWidget {
 
 class ChatScreenState extends State<ChatScreen> {
   final ScrollController scrollController = ScrollController();
+  bool _booting = true; // ⬅️ trạng thái khởi động
   @override
   void initState() {
     super.initState();
-
-    // 1) Kết nối WS một lần qua singleton (idempotent: connect sẽ tự bỏ qua nếu đã mở)
     wsSingleton.connect(onEvent: (evt) => _onWsEvent(evt));
-
-    // 2) Tải danh sách + subscribe phòng đầu tiên (loadUserChats không cần truyền ws)
-    _bootstrap();
+    // _bootstrap();
   }
 
   Future<void> _bootstrap() async {
-    await loadUserChats(setState);      // bỏ tham số ws
-    scrollToBottom(scrollController);
-    // nếu bạn muốn chắc chắn đã subscribe ngay tại đây:
-    final id = currentChat?.id;
-    if (id != null) wsSingleton.subscribe(id);
+    try {
+      await loadUserChats(setState); // sẽ set currentChat nếu có
+      final id = currentChat?.id;
+      if (id != null) wsSingleton.subscribe(id);
+      scrollToBottom(scrollController);
+    } finally {
+      if (mounted) setState(() => _booting = false); // ⬅️ tắt splash
+    }
   }
 
-  void _onWsEvent(Map evt) async {
-    try{
-
-      if (evt['type'] != 'message') return;
-      if (evt['chatId'] != currentChat?.id) return;
-
-      final msg = Map<String, dynamic>.from(evt['message']);
-      print("////////////////////////////////////////////////websocket//////////////////////////////");
-      print(msg);
-      print(msg['sender']);
-      // 🟢 Thêm điều kiện này để bỏ qua tin nhắn do chính mình gửi
-      if (msg['sender'] == userId) return;
-
-      final privateKeyPem = await getPrivateKey(userId);
-      if (privateKeyPem == null) return;  // phòng thủ
-
-      final encForMe = (msg['encryptAes'] as List?)?.cast<Map>()
-          .firstWhere((e) => e['userId'] == userId, orElse: () => {});
-
-      if (encForMe!.isNotEmpty) {
-        final aesKey = await RSAUtil.decryptKey(encForMe['encryptedAesKey'], privateKeyPem);
-        msg['text'] = await AESUtil.decrypt(msg['text'], aesKey);
+  void _onWsEvent(dynamic evt) async {
+    try {
+      // 0) Chuẩn hoá event thành Map
+      Map<String, dynamic> e;
+      if (evt is String) {
+        e = jsonDecode(evt) as Map<String, dynamic>;
+      } else if (evt is Map) {
+        e = Map<String, dynamic>.from(evt);
       } else {
-        msg['text'] = '[Không có khóa AES cho bạn]';
+        print('[WS] Unknown event type: ${evt.runtimeType}');
+        return;
       }
-      scrollToBottom(scrollController);
 
-      setState(() {
-        final exists = currentChat!.messages.any((m) => m['_id'] == msg['_id']);
-        if (!exists) currentChat!.messages.add(msg);
-      });
+      // 1) Loại event
+      final type = (e['type'] ?? e['event'] ?? '').toString();
+      if (type != 'message') {
+        // Debug nhẹ để biết có event khác lọt vào
+        // print('[WS] ignore type=$type');
+        return;
+      }
+
+      // 2) Trùng phòng?
+      final evConvId = (e['conversationId'] ?? e['chatId'] ?? e['roomId'] ?? '')
+          .toString();
+      if (evConvId.isEmpty || evConvId != (currentChat?.id ?? '')) {
+        // print('[WS] event for other room: $evConvId');
+        return;
+      }
+
+      // 3) Lấy object message (nếu server bọc trong "message")
+      final raw = (e['message'] is Map)
+          ? Map<String, dynamic>.from(e['message'])
+          : Map<String, dynamic>.from(e);
+
+      // 4) Bỏ qua tin của chính mình
+      final senderId = (raw['senderId'] ?? raw['sender'])?.toString();
+      if (senderId == userId) return;
+
+      // 5) Giải mã text
+      final privateKeyPem = await getPrivateKey(userId);
+      if (privateKeyPem == null) {
+        print('[WS] No privateKey for $userId');
+        return;
+      }
+
+      String decryptedText = '[Không có khóa AES cho bạn]';
+
+      final encList = (raw['encryptAes'] as List?)?.cast<Map>();
+      if (encList != null && encList.isNotEmpty) {
+        final encForMe = encList.firstWhere(
+              (m) => (m['userId']?.toString() == userId),
+          orElse: () => const {},
+        );
+        if (encForMe.isNotEmpty) {
+          final aesKey = await RSAUtil.decryptKey(
+              encForMe['encryptedAesKey'], privateKeyPem);
+          decryptedText =
+          await AESUtil.decrypt(raw['text']?.toString() ?? '', aesKey);
+        }
+      } else {
+        // Fallback: gọi /messages/key
+        final mid = (raw['_id'] ?? raw['id'] ?? '').toString();
+        if (mid.isNotEmpty) {
+          final keyUri = Uri.parse(
+              '$apiBaseUrl/messages/key?messageId=$mid&userId=$userId');
+          final keyResp = await http.get(keyUri).timeout(
+              const Duration(seconds: 8));
+          if (keyResp.statusCode >= 200 && keyResp.statusCode < 300) {
+            final keyJson = jsonDecode(keyResp.body);
+            final encAesKey = keyJson['encryptedAesKey']?.toString() ?? '';
+            if (encAesKey.isNotEmpty) {
+              final aesKey = await RSAUtil.decryptKey(encAesKey, privateKeyPem);
+              decryptedText =
+              await AESUtil.decrypt(raw['text']?.toString() ?? '', aesKey);
+            }
+          } else if (keyResp.statusCode == 404) {
+            decryptedText = 'Tin nhắn ẩn';
+          } else {
+            decryptedText = '[Lỗi lấy khóa: ${keyResp.statusCode}]';
+          }
+        }
+      }
+
+      raw['text'] = decryptedText;
+      raw['isTyping'] = false;
+      raw['status'] ??= 'sent';
+      raw['sender'] ??= senderId;
+
+
+      // 6) Đỡ sẵn profile (Hướng A)
+      final sp = raw['senderProfile'];
+      if (sp is Map) {
+        raw['name'] = (sp['name']?.toString() ?? '').trim();
+        raw['email'] = (sp['email']?.toString() ?? '').trim();
+        raw['avatar'] = (sp['avatar']?.toString() ?? '').trim();
+      }
+
+      // 7) Nhét vào UI nếu chưa có
+      final exists = currentChat?.messages.any((m) =>
+      m['_id']?.toString() == (raw['_id']?.toString())) ?? false;
+      if (!exists) {
+        if (!mounted) return;
+        setState(() => currentChat?.messages.add(raw));
+        scrollToBottom(scrollController);
+      }
+    } catch (e, st) {
+      print('[_onWsEvent] error: $e');
+      print(st);
     }
-    catch(e){print('Lỗi _onWsEvent');}
-
   }
 
   // Hàm kiểm tra tất cả ảnh đều đã được upload
@@ -79,6 +159,7 @@ class ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final bool hasChat = currentChat != null;
     return Scaffold(
       backgroundColor: Color(0xFFEFF3F5),
       appBar: AppBar(
@@ -95,236 +176,118 @@ class ChatScreenState extends State<ChatScreen> {
           },
         ),
       ),
-      drawer: Drawer(
-        backgroundColor: Color(0xFFEFF3F5),
-        child: ListView(
-          shrinkWrap: true,
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color(0xFF9CC6FF),
-              ),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage(avatarUrl), // Đường dẫn đến hình ảnh avatar
-                  ),
-                  SizedBox(width: 16), // Khoảng cách giữa avatar và text
-                  GestureDetector(
-                    onTap: () {
-                      // Điều hướng đến trang mới khi nhấn vào avatar
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ProfilePage()),
-                      );
-                    },
-                    child: Text(
-                      userName, // Thay thế bằng tên người dùng
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Column(
-              children: [
-                // Kiểm tra nếu user là admin
-                if (isAdmin)
-                  Column(
-                      children: [
-                        Container(
-                          child: InkWell(
-                            onTap: () async {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => AdminScreen()),
-                              );
-                            },
-                            splashColor: Colors.green.withOpacity(0.5),
-                            highlightColor: Colors.green.withOpacity(0.3),
-                            child: Container(
-                              color: Colors.white,
-                              child: ListTile(
-                                title: Text('Upload File'),
-                                leading: Icon(Icons.upload_file),
-                                trailing: Icon(Icons.arrow_forward),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Divider(),
-                      ]
-                  ),
-                Container(
-                  child: InkWell(
-                    onTap: () async {
-                      final String? newChatTitle = await showNewChatDialog(context);
-                      if (newChatTitle != null && newChatTitle.isNotEmpty) {
-                        await createNewChat(newChatTitle, setState);
-                        // createNewChat đã set currentChat
-                        final String? newId = currentChat?.id;
-                        if (newId != null) {
-                          await fetchMessages(newId, setState); // thường rỗng
-                          wsSingleton.subscribe(newId);         // subscribe phòng mới
-                        }
-                        Navigator.of(context).pop();
-                      }
-                    },
-                    splashColor: Colors.blue.withOpacity(0.5),
-                    highlightColor: Colors.blue.withOpacity(0.3),
-                    child: Container(
-                      color: Colors.white,
-                      child: ListTile(
-                        title: Text('Tạo mới'),
-                        leading: Icon(Icons.chat),
-                        trailing: Icon(Icons.arrow_forward),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Divider(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.5, // hoặc 400, 500 tuỳ ý
-              child: FutureBuilder<List<Chat>>(
-                future: fetchUserChats(setState),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(child: CircularProgressIndicator());
-                  } else if (snapshot.hasError) {
-                    return Center(child: Text('Có lỗi xảy ra!'));
-                  } else if (snapshot.hasData) {
-                    final chatListData = snapshot.data!;
-                    return FutureBuilder<List<Widget>>(
-                      future: buildChatList(chatListData, context, setState, scrollController),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.waiting) {
-                          return Center(child: CircularProgressIndicator());
-                        } else if (snapshot.hasError) {
-                          return Center(child: Text('Error: ${snapshot.error}'));
-                        } else if (snapshot.hasData) {
-                          return ListView(
-                            shrinkWrap: true,
-                            children: snapshot.data!,
-                          );
-                        } else {
-                          return Center(child: Text('No chats available'));
-                        }
-                      },
-                    );
-                  }
-                  return Center(child: Text('Không có chat nào!'));
-                },
-              ),
-            ),
-          ],
-        ),
+      drawer: SocialDrawer(
+        setRootState: setState,
+        scrollController: scrollController,
       ),
-      body: Column(
+      body: hasChat
+          ? Column(
         children: <Widget>[
-          Expanded(child: buildMessageList(scrollController, isTyping, setState)),
-          Container(
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.camera_alt),
-                    onPressed: () => pickImage(ImageSource.camera, setState),
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.photo),
-                    onPressed: () => pickImage(ImageSource.gallery, setState),
-                  ),
-                  Expanded(
-                    child: TextField(
-                      controller: controller,
-                      decoration: InputDecoration(
-                        hintText: 'Tin nhắn',
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.send),
-                    onPressed: (_allImagesUploaded())
-                        ? () {
-                      sendMessage(setState, scrollController);
-                      sendImagesWithCaption(setState, scrollController);
-                      scrollToBottom(scrollController);
-                    }
-                        : null,
-                    color: _allImagesUploaded() ? Colors.blue : Colors.grey,
-                  ),
-                ],
-              ),
-            ),
+          Expanded(
+              child: buildMessageList(scrollController, isTyping, setState)),
+          _buildComposer(),
+          if (selectedImages.isNotEmpty) _buildSelectedImages(),
+        ],
+      )
+          : _buildSplash(), // ⬅️ Mặc định hiện GIF
+    );
+  }
+  Widget _buildSplash() {
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      child: Image.asset('assets/splash.gif', fit: BoxFit.cover),
+    );
+  }
+
+
+  Widget _buildComposer() {
+    if (currentChat == null) return const SizedBox.shrink();
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.all(8),
+      child: Row(
+        children: <Widget>[
+          IconButton(icon: const Icon(Icons.camera_alt),
+              onPressed: () => pickImage(ImageSource.camera, setState)),
+          IconButton(icon: const Icon(Icons.photo),
+              onPressed: () => pickImage(ImageSource.gallery, setState)),
+          Expanded(child: TextField(controller: controller,
+              decoration: const InputDecoration(hintText: 'Tin nhắn'))),
+          IconButton(
+            icon: const Icon(Icons.send),
+            onPressed: _allImagesUploaded()
+                ? () {
+              sendMessage(setState, scrollController);
+              sendImagesWithCaption(setState, scrollController);
+              scrollToBottom(scrollController);
+            }
+                : null,
+            color: _allImagesUploaded() ? Colors.blue : Colors.grey,
           ),
-          if (selectedImages.isNotEmpty)
-            Container(
-              height: 100,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: selectedImages.length,
-                itemBuilder: (context, index) {
-                  final image = selectedImages[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Stack(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: image['status'] == 'loading'
-                              ? Stack(
-                            children: [
-                              Image.file(
-                                File(image['url']),
-                                width: 80,
-                                height: 80,
-                                fit: BoxFit.cover,
-                              ),
-                              Positioned.fill(
-                                child: Container(
-                                  color: Colors.black.withOpacity(0.5),
-                                  child: Center(
-                                    child: LoadingAnimationWidget.dotsTriangle(
-                                      size: 30, color:Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                              : Image.network(
-                            image['url'],
-                            width: 80,
-                            height: 80,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Positioned(
-                          right: 0,
-                          top: 0,
-                          child: IconButton(
-                            icon: Icon(Icons.clear, color: Colors.red),
-                            onPressed: () => removeImage(image['url'], setState),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
         ],
       ),
     );
   }
+
+  Widget _buildSelectedImages() {
+    return SizedBox(
+      height: 100,
+      child: ListView.builder(
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        itemCount: selectedImages.length,
+        itemBuilder: (context, index) {
+          final image = selectedImages[index];
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: image['status'] == 'loading'
+                      ? Stack(
+                    children: [
+                      Image.file(
+                        File(image['url']),
+                        width: 80,
+                        height: 80,
+                        fit: BoxFit.cover,
+                      ),
+                      Positioned.fill(
+                        child: Container(
+                          color: Colors.black.withOpacity(0.5),
+                          child: Center(
+                            child: LoadingAnimationWidget.dotsTriangle(
+                              size: 30,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                      : Image.network(
+                    image['url'],
+                    width: 80,
+                    height: 80,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Positioned(
+                  right: 0,
+                  top: 0,
+                  child: IconButton(
+                    icon: const Icon(Icons.clear, color: Colors.red),
+                    onPressed: () => removeImage(image['url'], setState),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+
 }

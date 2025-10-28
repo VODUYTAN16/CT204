@@ -7,6 +7,8 @@ final FirebaseAuth auth = FirebaseAuth.instance;
 // final FirebaseFirestore firestore = FirebaseFirestore.instance;
 final TextEditingController usernameController = TextEditingController();
 final TextEditingController passwordController = TextEditingController();
+final TextEditingController nameController = TextEditingController();
+
 
 // bool isLogin = true; // True cho đăng nhập, false cho đăng ký
 bool isPhoneLogin = false;
@@ -22,8 +24,8 @@ class AuthScreen extends StatefulWidget {
 class AuthScreenState extends State<AuthScreen> {
   Future<void> _submit() async {
     final username = usernameController.text.trim();
-    final password = passwordController.text;
-
+    final password = passwordController.text.trim();
+    final name = nameController.text.trim();
 
     if (isPhoneLogin) {
       // // Chuyển đổi số điện thoại sang định dạng E.164
@@ -32,7 +34,7 @@ class AuthScreenState extends State<AuthScreen> {
       // await submitPhoneLogin(formattedPhoneNumber, context);
     } else {
       // Đăng nhập/Đăng ký bằng email
-      await submitEmailLogin(username, password, context);
+      await submitEmailLogin(name, username, password, context);
     }
   }
 
@@ -109,6 +111,23 @@ class AuthScreenState extends State<AuthScreen> {
                 ),
                 SizedBox(height: 20),
                 // TextField nhập email hoặc số điện thoại
+                if(!isLoginMode)
+                TextField(
+                  controller: nameController,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    hintText: 'Họ và tên',
+                    hintStyle: TextStyle(color: Colors.grey),
+                    filled: true,
+                    fillColor: Colors.grey[800],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide.none,
+                    ),
+                    contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                  ),
+                ),
+                SizedBox(height: 10),
                 TextField(
                   controller: usernameController,
                   style: TextStyle(color: Colors.white),

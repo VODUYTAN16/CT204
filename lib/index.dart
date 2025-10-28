@@ -10,7 +10,7 @@ export 'dart:io';
 export 'dart:convert';
 export 'package:google_generative_ai/google_generative_ai.dart';
 export 'package:flutter_markdown/flutter_markdown.dart';
-export 'package:firebase_auth/firebase_auth.dart';
+// export 'package:firebase_authc/firebase_auth.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:namer_app/firebase_options.dart';

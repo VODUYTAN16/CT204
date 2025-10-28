@@ -7,7 +7,7 @@ import 'index.dart';
 import '../../crypto_utils.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-Future<void> submitEmailLogin(String email, String password, BuildContext context) async {
+Future<void> submitEmailLogin(String name, String email, String password, BuildContext context) async {
   try {
     if (isLoginMode) {
       // Đăng nhập người dùng
@@ -22,7 +22,6 @@ Future<void> submitEmailLogin(String email, String password, BuildContext contex
           'password': password, // Mật khẩu đã mã hóa
         }),
       );
-
 
 
       if (response.statusCode == 200) {
@@ -67,6 +66,7 @@ Future<void> submitEmailLogin(String email, String password, BuildContext contex
         },
         body: jsonEncode({
           'email': email,
+          'name':name,
           'password': password,
           'publicKey': publicKey,  // Lưu public key lên MongoDB
         }),

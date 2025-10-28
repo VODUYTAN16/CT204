@@ -59,44 +59,47 @@ class ProfilePage extends StatelessWidget {
   void _showLogoutConfirmationDialog(BuildContext context) {
     showDialog(
       context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Đăng xuất'),
-          content: Text('Bạn có chắc chắn muốn đăng xuất không?'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(); // Đóng popup
-              },
-              child: Text('Hủy'),
-            ),
-            TextButton(
-              onPressed: () async {
-                await logout(); // Gọi hàm đăng xuất
-                Navigator.of(context).pop(); // Đóng popup
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => AuthScreen()),
-                ); // Chuyển đến AuthScreen
-              },
-              child: Text('Đăng xuất'),
-            ),
-          ],
-        );
-      },
+      builder: (_) => AlertDialog(
+        title: Text('Đăng xuất'),
+        content: Text('Bạn có chắc chắn muốn đăng xuất không?'),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: Text('Hủy')),
+          TextButton(
+            onPressed: () async {
+              await logout();           // ⬅️ KHÔNG cần setState/context ở đây
+              Navigator.of(context).pop();
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (_) => AuthScreen()),
+              );
+            },
+            child: Text('Đăng xuất'),
+          ),
+        ],
+      ),
     );
   }
-}
 
-Future<void> logout() async {
-  try {
-    await FirebaseAuth.instance.signOut(); // Đăng xuất từ
-    // Ngắt WebSocket để tránh rò rỉ kết nối và sai phòng
+// logout không nhận setState/context
+  Future<void> logout() async {
     try {
-      wsSingleton.dispose();     // hoặc wsSingleton.close();
-    } catch (_) {}
-    // Thực hiện các hành động khác nếu cần sau khi đăng xuất
-  } catch (e) {
-    // Xử lý lỗi nếu có
-    print('Lỗi đăng xuất: $e');
-  }
-}
+      await FirebaseAuth.instance.signOut();
+
+      // Hủy WS
+      try {
+        wsSingleton.dispose();
+      } catch (_) {}
+
+      // Dọn state global
+      currentChat = null;
+      currentChatIsGroup = false;
+      currentChatPeerAvatarPath = null;
+      chatList = [];
+      selectedImages.clear();
+      isTyping = false;
+      controller.clear();
+
+      // (tùy chọn) xoá token local, cache...
+    } catch (e) {
+      print('Lỗi đăng xuất: $e');
+    }
+  }}

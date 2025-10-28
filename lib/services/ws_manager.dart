@@ -35,13 +35,14 @@ class WsManager {
   }
 
   void subscribe(String chatId) {
-    print('da subscribe: ${chatId} //////////////////////////////////////');
+
     if (_ch == null) return;
     if (_currentRoom != null && _currentRoom != chatId) {
-      _ch!.sink.add(jsonEncode({"type":"unsubscribe","chatId":_currentRoom}));
+      _ch!.sink.add(jsonEncode({"type":"unsubscribe","conversationId":_currentRoom}));
     }
+    print('da subscribe: ${chatId} //////////////////////////////////////');
     _currentRoom = chatId;
-    _ch!.sink.add(jsonEncode({"type":"subscribe","chatId":chatId}));
+    _ch!.sink.add(jsonEncode({"type":"subscribe","conversationId":chatId}));
   }
 
   void dispose() {

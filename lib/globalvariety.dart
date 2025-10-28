@@ -39,8 +39,8 @@ const String apiKey = 'AIzaSyA_INlI-31sF05njnggLQQ8oiTRORLqhvI';
 
 late String privateKey_RSA ;
 
-const String apiBaseUrl = 'http://192.168.1.167:5000';
-const String baseWs = 'ws://192.168.1.167:5000';
+const String apiBaseUrl = 'http://192.168.0.120:5000';
+const String baseWs = 'ws://192.168.0.120:5000';
 
 
 late final WsManager wsSingleton;
