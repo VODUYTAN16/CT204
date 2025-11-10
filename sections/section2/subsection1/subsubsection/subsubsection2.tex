@@ -1,0 +1,15 @@
+\subsubsection{Nguyên tắc bảo mật giữa các thành phần}
+\hspace*{2em} Hệ thống tuân thủ nghiêm ngặt các nguyên tắc bảo mật nền tảng nhằm bảo đảm tính \textbf{bí mật}, \textbf{toàn vẹn} và \textbf{xác thực} của thông tin trong suốt quá trình truyền và xử lý dữ liệu.
+
+\indent \textbf{Xác thực và ủy quyền:} Mọi người dùng đều phải trải qua quy trình xác thực trước khi truy cập hoặc gửi dữ liệu đến máy chủ.  
+Cơ chế xác thực dựa trên mã thông báo (\textit{token}) được cấp phát sau khi người dùng đăng nhập hợp lệ.  
+Mỗi yêu cầu gửi đến \textit{REST API} hoặc \textit{WebSocket} đều phải kèm theo token hợp lệ để máy chủ tiến hành kiểm tra và xác nhận quyền truy cập.  
+Cơ chế ủy quyền được áp dụng ở tầng ứng dụng, bảo đảm rằng người dùng chỉ có thể truy cập các hội thoại hoặc tài nguyên mà họ là thành viên hợp pháp.
+
+\indent \textbf{Bảo mật kênh truyền:} Dữ liệu trao đổi giữa \textit{client} và \textit{server} được bảo vệ thông qua các giao thức mã hóa lớp vận chuyển, cụ thể là \texttt{HTTPS} cho các yêu cầu REST và \texttt{WSS} (\textit{WebSocket Secure}) cho các kết nối thời gian thực.  
+Việc sử dụng các giao thức này giúp đảm bảo dữ liệu không thể bị nghe lén, đánh cắp hoặc giả mạo bởi các bên thứ ba trong quá trình truyền qua mạng công cộng.
+
+\indent \textbf{Mã hóa và quản lý khóa:} Nội dung tin nhắn được mã hóa cục bộ tại \textit{client} bằng thuật toán đối xứng AES.  
+Khóa AES này sau đó được mã hóa bằng RSA — một cơ chế mã hóa bất đối xứng — sử dụng khóa công khai của người nhận để bảo vệ khóa phiên.  
+Khi nhận tin nhắn, người nhận sử dụng khóa bí mật cá nhân của mình để giải mã khóa AES và khôi phục nội dung gốc.  
+Máy chủ chỉ lưu trữ bản mã và khóa AES đã được mã hóa, hoàn toàn không có khả năng truy xuất nội dung gốc, qua đó duy trì mô hình mã hóa đầu cuối (E2EE).

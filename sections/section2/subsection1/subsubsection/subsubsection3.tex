@@ -1,0 +1,12 @@
+\subsubsection{Môi trường và công cụ phát triển}
+\hspace*{2em} \textbf{Công nghệ:} Ứng dụng được phát triển bằng \textit{Flutter/Dart} ở phía \textit{client} và \textit{Node.js/Express} ở phía \textit{server}.  
+Dữ liệu được lưu trữ trên \textit{MongoDB}, trong đó các mô hình dữ liệu (\textit{model}) bao gồm người dùng, quan hệ bạn bè, hội thoại, thành viên nhóm, tin nhắn và khóa mã hóa.  
+Các thư viện mã hóa như \textit{PointyCastle}, \textit{Encrypt} và \textit{Flutter Secure Storage} được tích hợp để đảm bảo xử lý an toàn các thao tác mã hóa \textbf{RSA–AES} cũng như quản lý khóa cục bộ trên thiết bị.  
+Giao tiếp thời gian thực được thực hiện thông qua \textit{WebSocket}, cho phép truyền và nhận sự kiện tức thời giữa các người dùng trong cùng một hội thoại.
+
+\indent \textbf{Môi trường phát triển:} Ứng dụng được xây dựng và kiểm thử trên môi trường giả lập (\textit{Android Emulator}) và thiết bị thật, sử dụng \textit{Flutter CLI}, \textit{Gradle} và \textit{Android Studio} để biên dịch.  
+Phía máy chủ vận hành trong môi trường \textit{Node.js} với khả năng đồng bộ dữ liệu thông qua \textit{MongoDB Change Streams}, hỗ trợ cập nhật \textit{real-time} khi có thay đổi tại tầng lưu trữ.
+
+\indent \textbf{Cấu trúc hoạt động:} Trong giai đoạn phát triển, \textit{client} kết nối tới máy chủ thông qua địa chỉ cấu hình nội bộ.  
+Khi triển khai chính thức, toàn bộ kênh truyền đều bắt buộc sử dụng \texttt{HTTPS} và \texttt{WSS}, kèm theo \textit{token} xác thực hợp lệ cho mọi giao tiếp.  
+Cấu trúc này giúp hệ thống vận hành ổn định, dễ dàng mở rộng và đảm bảo an toàn dữ liệu trong suốt vòng đời hoạt động.
