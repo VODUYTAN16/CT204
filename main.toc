@@ -19,9 +19,12 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Thuật toán RSA }{4}{subsubsection.0.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2}Thuật toán AES }{5}{subsubsection.0.1.2.2}%
 \contentsline {subsubsection}{\numberline {1.2.3}Đánh giá ưu nhược điểm của RSA và AES}{8}{subsubsection.0.1.2.3}%
-\contentsline {subsubsection}{\numberline {1.2.4}Cơ chế kết hợp RSA – AES trong hệ thống E2EE}{8}{subsubsection.0.1.2.4}%
+\contentsline {subsection}{\numberline {1.3}Bài báo tham khảo và cơ sở áp dụng}{8}{subsection.0.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Giới thiệu bài báo “Secure Chat Application with an End-to-End Encryption”}{8}{subsubsection.0.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Cơ chế bảo mật trong bài báo}{9}{subsubsection.0.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Đánh giá và liên hệ với đề tài nhóm}{9}{subsubsection.0.1.3.3}%
 \contentsline {section}{III. PHẦN KẾT LUẬN}{10}{partsection.3}%
-\contentsline {subsection}{\numberline {3.}Kết luận}{10}{subsection.0.0.3}%
-\contentsline {subsection}{\numberline {4.}Hướng phát triển}{10}{subsection.0.0.4}%
-\contentsline {section}{TÀI LIỆU THAM KHẢO}{11}{figure.caption.9}%
+\contentsline {subsection}{\numberline {4.}Kết luận}{10}{subsection.0.0.4}%
+\contentsline {subsection}{\numberline {5.}Hướng phát triển}{10}{subsection.0.0.5}%
+\contentsline {section}{TÀI LIỆU THAM KHẢO}{12}{subsection.0.0.5}%
 \contentsfinish 
