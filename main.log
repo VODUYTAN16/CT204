@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.10)  10 NOV 2025 10:15
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.10)  10 NOV 2025 11:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,14 +6,12 @@ entering extended mode
 (main.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
-
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/extsizes\extreport.c
-ls
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/extsizes\extreport.cls
 Document Class: extreport 1996/10/08 v1.0 Non Standard LaTeX document class
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
 File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\exscale.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/base\exscale.sty
 Package: exscale 2018/09/24 v2.1i Standard LaTeX package exscale
 LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
@@ -35,15 +33,14 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 \belowcaptionskip=\skip50
 \bibindent=\dimen149
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.st
-y
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xp
-arse.sty
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2025-10-09 L3 programming layer (loader) 
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
-xetex.def
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xet
+ex.def
 File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
 \g__graphics_track_int=\count280
 \g__pdfannot_backend_int=\count281
@@ -53,8 +50,8 @@ Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xe
-tex.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex
+.sty
 Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTe
 X
 \l__fontspec_script_int=\count283
@@ -71,32 +68,31 @@ X
 \l__fontspec_tmpa_dim=\dimen150
 \l__fontspec_tmpb_dim=\dimen151
 \l__fontspec_tmpc_dim=\dimen152
-
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+ (C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cf
-g)))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\polyglos
-sia.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))
+)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\polyglossia
+.sty
 Package: polyglossia 2025/09/22 v2.8 Modern multilingual typesetting with XeLaT
 eX and LuaLaTeX
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count294
-) (C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 )
 \l_xpg_alias_keyvals_int=\count295
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-la
-tex.ldf
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-latex
+.ldf
 File: gloss-latex.ldf polyglossia: module for default language
 ))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-vi
-etnamese.ldf
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-vietn
+amese.ldf
 File: gloss-vietnamese.ldf polyglossia: module for Vietnamese
 )
 
@@ -136,14 +132,14 @@ ext;"
 text;"
 
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count296
@@ -159,36 +155,31 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen160
 \Gm@dimlist=\toks18
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cf
-g))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphic
-s.cfg
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 106.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.d
-ef
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
 File: xetex.def 2025/09/29 v5.0o Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen161
 \Gin@req@width=\dimen162
-)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count299
 \float@exts=\toks19
@@ -196,14 +187,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks20
 \@floatcapt=\box54
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.s
-ty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen163
 \captionmargin=\dimen164
@@ -223,13 +213,9 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count302
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count303
-)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.st
-y
+) (C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
-)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.st
-y
+) (C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen171
 \lightrulewidth=\dimen172
@@ -248,11 +234,10 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count306
 \@lastruleclass=\count307
 \@thisrulewidth=\dimen183
-)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+) (C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
 \col@sep=\dimen184
 \ar@mcellbox=\box55
@@ -270,7 +255,7 @@ Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
 \TX@cols=\count308
 \TX@ftn=\toks22
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
 \LTleft=\skip53
 \LTright=\skip54
@@ -289,8 +274,7 @@ Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
 \c@LT@chunks=\count313
 \LT@p@ftn=\toks23
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count314
 \lst@gtempboxa=\box62
 \lst@token=\toks24
@@ -304,61 +288,57 @@ y
 \lst@lineno=\count319
 \lst@maxwidth=\dimen195
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 \c@lstnumber=\count320
 \lst@skipnumbers=\count321
 \lst@framebox=\box63
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cf
-g
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\ti
-kz.sty
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.s
-ty
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs
-.sty
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfu
-til-common.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex
 \pgfutil@everybye=\toks25
 \pgfutil@tempdima=\dimen196
 \pgfutil@tempdimb=\dimen197
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfu
-til-latex.def
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def
 \pgfutil@abb=\box64
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfr
-cs.code.tex
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.t
-ex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
 Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
 Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfco
-re.sty
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfs
-ys.sty
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
-fsys.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
 Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
-eys.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
 \pgfkeys@pathtoks=\toks26
 \pgfkeys@temptoks=\toks27
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
-eyslibraryfiltered.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks28
 ))
 \pgf@x=\dimen198
@@ -382,47 +362,44 @@ eyslibraryfiltered.code.tex
 \t@pgf@tokc=\toks31
 \pgf@sys@id@count=\count326
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
-f.cfg
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
 Driver file for pgf: pgfsys-xetex.def
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
-fsys-xetex.def
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-xetex.def
 File: pgfsys-xetex.def 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
-fsys-dvipdfmx.def
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-dvipdfmx.def
 File: pgfsys-dvipdfmx.def 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
-fsys-common-pdf.def
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def
 File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 )
 \pgfsys@objnum=\count327
 )))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
-fsyssoftpath.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfsyssoftpath@smallbuffer@items=\count328
 \pgfsyssoftpath@bigbuffer@items=\count329
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
-fsysprotocol.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.c
-fg
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 274.
-
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.l
-tx)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
@@ -432,16 +409,16 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-core.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.c
-ode.tex
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathut
-il.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpa
-rser.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex
 \pgfmath@dimen=\dimen264
 \pgfmath@count=\count330
 \pgfmath@box=\box65
@@ -449,34 +426,34 @@ rser.code.tex
 \pgfmath@stack@operand=\toks33
 \pgfmath@stack@operation=\toks34
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
-nctions.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
-nctions.basic.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
-nctions.trigonometric.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
-nctions.random.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
-nctions.comparison.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
-nctions.base.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
-nctions.round.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
-nctions.misc.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
-nctions.integerarithmetics.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathca
-lc.code.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfl
-oat.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex
 \c@pgfmathroundto@lastzeros=\count331
 ))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.co
-de.tex)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corepoints.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@picminx=\dimen265
 \pgf@picmaxx=\dimen266
@@ -493,130 +470,129 @@ File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@zx=\dimen277
 \pgf@zy=\dimen278
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corepathconstruct.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@path@lastx=\dimen279
 \pgf@path@lasty=\dimen280
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corepathusage.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@shorten@end@additional=\dimen281
 \pgf@shorten@start@additional=\dimen282
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corescopes.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box66
 \pgf@hbox=\box67
 \pgf@layerbox@main=\box68
 \pgf@picture@serial@count=\count332
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-coregraphicstate.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgflinewidth=\dimen283
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-coretransformations.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@pt@x=\dimen284
 \pgf@pt@y=\dimen285
 \pgf@pt@temp=\dimen286
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corequick.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-coreobjects.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex
 File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corepathprocessing.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corearrows.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowsep=\dimen287
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-coreshade.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@max=\dimen288
 \pgf@sys@shading@range@num=\count333
 \pgf@shadingcount=\count334
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-coreimage.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-coreexternal.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex
 File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfexternal@startupbox=\box69
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corelayers.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex
 File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-coretransparency.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex
 File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corepatterns.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex
 File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
-corerdf.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex
 File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
-uleshapes.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex
 File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodeparttextbox=\box70
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
-uleplot.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex
 File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
-fcomp-version-0-65.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@nodesepstart=\dimen289
 \pgf@nodesepend=\dimen290
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
-fcomp-version-1-18.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 ))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor
-.sty
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkey
-s.sty
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
-eys.code.tex))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
-
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.c
-ode.tex))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgff
-or.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
 \pgffor@iter=\dimen291
 \pgffor@skip=\dimen292
 \pgffor@stack=\toks35
 \pgffor@toks=\toks36
 ))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
-tikz\tikz.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
 Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
-ibraryplothandlers.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@plot@mark@count=\count335
 \pgfplotmarksize=\dimen293
@@ -638,8 +614,8 @@ File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \tikznumberofcurrentchild=\count338
 \tikz@fig@count=\count339
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
-ulematrix.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfmatrixcurrentrow=\count340
 \pgfmatrixcurrentcolumn=\count341
@@ -647,16 +623,15 @@ File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 \tikz@expandcount=\count343
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
-tikz/libraries\tikzlibrarytopaths.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
-tikz/libraries\tikzlibrarycalc.code.tex
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box75
 \beforetitleunit=\skip57
@@ -668,82 +643,72 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidthlast=\dimen305
 \titlewidthfirst=\dimen306
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.de
-f
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.
-sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
-inekeys.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescap
-e.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexc
-mds.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarer
-r.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 ))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\get
-titlestring.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.
-sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count344
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringen
-c.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen307
 \Hy@linkcounter=\count345
 \Hy@pagecounter=\count346
-
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+ (C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
-)
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.st
-y
+) (C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count347
-
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+ (C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Hyper figures OFF on input line 4195.
@@ -755,18 +720,18 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
 \c@Hy@tempcnt=\count348
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen308
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintc
-alc.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -786,7 +751,7 @@ Package hyperref Info: PDF/A mode OFF on input line 6108.
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
 File: hxetex.def 2025-07-12 v7.01o Hyperref driver for XeTeX
 \pdfm@box=\box76
 \c@Hy@AnnotLevel=\count353
@@ -794,12 +759,12 @@ File: hxetex.def 2025-07-12 v7.01o Hyperref driver for XeTeX
 \Fld@listcount=\count355
 \c@bookmark@seq@number=\count356
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerun
-filecheck.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniq
-uecounter.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -807,17 +772,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip59
 )
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
- (C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count357
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
 \c@tabx@nest=\count358
@@ -880,7 +845,7 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
 File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
@@ -972,20 +937,17 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-unicode
-.def)
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-unicode.de
+f)
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.
-def
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
-
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.de
-f
+ (C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 \c@textcitecount=\count472
 \c@textcitetotal=\count473
@@ -1004,26 +966,25 @@ File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'ieee'...
 Package biblatex Info: ... file 'ieee.bbx' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.b
-bx
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
 File: ieee.bbx 2025-08-01 v1.4f biblatex bibliography style
 Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.bbx' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric
--comp.bbx
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric-co
+mp.bbx
 File: numeric-comp.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric
-.bbx
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bb
+x
 File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standar
-d.bbx
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
+bx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count481
 \c@bbx:relatedtotal=\count482
@@ -1031,14 +992,13 @@ File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load citation style 'ieee'...
 Package biblatex Info: ... file 'ieee.cbx' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.c
-bx
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.cbx
 File: ieee.cbx 2025-08-01 v1.4f biblatex citation style
 Package biblatex Info: Trying to load citation style 'numeric-verb'...
 Package biblatex Info: ... file 'numeric-verb.cbx' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric
--verb.cbx
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric-ve
+rb.cbx
 File: numeric-verb.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -1054,8 +1014,7 @@ Package biblatex Info: Redefining '\textcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cf
-g
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: XeTeX detected.
@@ -1066,19 +1025,17 @@ Package biblatex Info: ... and expl3
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-ex
-pl3.sty
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3
+.sty
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 ))
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titletoc.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
 \ttl@leftsep=\dimen311
 )
 \c@partsection=\count483
 
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip82
@@ -1232,15 +1189,14 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
-
-(C:\Users\VIVOBOOK\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.st
-y
+(C:\Users\kimkh\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count486
 Package hyperref Info: Link coloring OFF on input line 135.
- (main.out) (main.out)
+
+(main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -1352,13 +1308,49 @@ File: figures/pic6.png Graphic file (type bmp)
 
 [8]) (sections/section1/subsection3/subsubsection/subsubsection3.tex)))
 
-[9] (sections/subsection3/main.tex
+[9] (sections/section2/main.tex (sections/section2/subsection1/main.tex
+(sections/section2/subsection1/subsubsection/subsubsection1.tex
+File: figures/pic7.jpg Graphic file (type bmp)
+<figures/pic7.jpg>
+
 
 [10
 
-]))
+]
 
 [11]
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
+[]|\TU/TimesNewRoman(0)/m/n/10 ObjectId
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
+[]|\TU/TimesNewRoman(0)/m/n/10 ObjectId
+ []
+
+
+
+[12]) (sections/section2/subsection1/subsubsection/subsubsection2.tex
+
+[13]) (sections/section2/subsection1/subsubsection/subsubsection3.tex))
+(sections/section2/subsection2/main.tex
+(sections/section2/subsection2/subsubsection/subsubsection1.tex)
+(sections/section2/subsection2/subsubsection/subsubsection2.tex
+
+[14]) (sections/section2/subsection2/subsubsection/subsubsection3.tex)
+(sections/section2/subsection2/subsubsection/subsubsection4.tex
+
+[15]) (sections/section2/subsection2/subsubsection/subsubsection5.tex))
+(sections/section2/subsection3/main.tex))
+
+[16] (sections/subsection3/main.tex
+
+[17
+
+
+]))
+
+[18]
 
 Package biblatex Warning: Bibliography string 'and' untranslated
 (biblatex)                at entry 'carranza2024' on input line 235.
@@ -1409,7 +1401,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 
 
 
-[12
+[19
 
 ] (main.aux)
  ***********
@@ -1417,7 +1409,7 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 66EA72A0DBADA151165D32B4AB2ABC37;2818.
+(rerunfilecheck)             Checksum: 9351608F2F3C96D799A8F978930B80D2;3760.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -1427,12 +1419,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### simple group (level 1) entered at line 209 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 32712 strings out of 403196
- 665167 string characters out of 5455298
- 1526635 words of memory out of 5000000
- 60736 multiletter control sequences out of 15000+600000
- 628500 words of font info for 66 fonts, out of 8000000 for 9000
+ 32829 strings out of 403196
+ 670333 string characters out of 5455919
+ 1536170 words of memory out of 5000000
+ 60818 multiletter control sequences out of 15000+600000
+ 628508 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,11n,93p,1199b,5166s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,93p,1199b,5286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (18 pages, 297124 bytes).
+Output written on main.xdv (25 pages, 487612 bytes).

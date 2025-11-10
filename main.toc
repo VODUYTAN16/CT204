@@ -23,8 +23,20 @@
 \contentsline {subsubsection}{\numberline {1.3.1}Giới thiệu bài báo “Secure Chat Application with an End-to-End Encryption”}{8}{subsubsection.0.1.3.1}%
 \contentsline {subsubsection}{\numberline {1.3.2}Cơ chế bảo mật trong bài báo}{9}{subsubsection.0.1.3.2}%
 \contentsline {subsubsection}{\numberline {1.3.3}Đánh giá và liên hệ với đề tài nhóm}{9}{subsubsection.0.1.3.3}%
-\contentsline {section}{III. PHẦN KẾT LUẬN}{10}{partsection.3}%
-\contentsline {subsection}{\numberline {4.}Kết luận}{10}{subsection.0.0.4}%
-\contentsline {subsection}{\numberline {5.}Hướng phát triển}{10}{subsection.0.0.5}%
-\contentsline {section}{TÀI LIỆU THAM KHẢO}{12}{subsection.0.0.5}%
+\contentsline {section}{\numberline {2}Phát triển hệ thống nhắn tin bảo mật}{10}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}Kiến trúc tổng thể hệ thống}{10}{subsection.0.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Thành phần chính: Client – Server – Cơ sở dữ liệu}{10}{subsubsection.0.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Nguyên tắc bảo mật giữa các thành phần}{13}{subsubsection.0.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Môi trường và công cụ phát triển}{14}{subsubsection.0.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Quy trình bảo mật của hệ thống}{14}{subsection.0.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Tạo và lưu trữ cặp khóa RSA cho người dùng}{14}{subsubsection.0.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Mã hóa tin nhắn bằng AES trước khi gửi}{15}{subsubsection.0.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Trao đổi khóa AES qua kênh mã hóa RSA}{15}{subsubsection.0.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Giải mã tin nhắn ở phía người nhận}{15}{subsubsection.0.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Bảo vệ khóa riêng tư và dữ liệu tin nhắn}{16}{subsubsection.0.2.2.5}%
+\contentsline {subsection}{\numberline {2.3}Giao diện và tính năng}{16}{subsection.0.2.3}%
+\contentsline {section}{III. PHẦN KẾT LUẬN}{17}{partsection.3}%
+\contentsline {subsection}{\numberline {4.}Kết luận}{17}{subsection.0.0.4}%
+\contentsline {subsection}{\numberline {5.}Hướng phát triển}{17}{subsection.0.0.5}%
+\contentsline {section}{TÀI LIỆU THAM KHẢO}{19}{subsection.0.0.5}%
 \contentsfinish 

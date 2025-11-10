@@ -53,14 +53,40 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.1}Giới thiệu bài báo “Secure Chat Application with an End-to-End Encryption”}{8}{subsubsection.0.1.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.2}Cơ chế bảo mật trong bài báo}{9}{subsubsection.0.1.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.3}Đánh giá và liên hệ với đề tài nhóm}{9}{subsubsection.0.1.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{III. PHẦN KẾT LUẬN}{10}{partsection.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.}Kết luận}{10}{subsection.0.0.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.}Hướng phát triển}{10}{subsection.0.0.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{TÀI LIỆU THAM KHẢO}{12}{subsection.0.0.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Phát triển hệ thống nhắn tin bảo mật}{10}{section.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Kiến trúc tổng thể hệ thống}{10}{subsection.0.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Thành phần chính: Client – Server – Cơ sở dữ liệu}{10}{subsubsection.0.2.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Mô hình ba lớp Client–Server–Database của hệ thống.}}{11}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:pic7}{{7}{11}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Mô hình ba lớp Client–Server–Database của hệ thống}{figure.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Cấu trúc bảng dữ liệu Conversation}}{11}{table.caption.10}\protected@file@percent }
+\newlabel{tab:conversation}{{1}{11}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Cấu trúc bảng dữ liệu Conversation}{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Cấu trúc bảng dữ liệu Friendship}}{12}{table.caption.11}\protected@file@percent }
+\newlabel{tab:friendship}{{2}{12}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Cấu trúc bảng dữ liệu Friendship}{table.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Cấu trúc bảng dữ liệu Membership}}{12}{table.caption.12}\protected@file@percent }
+\newlabel{tab:membership}{{3}{12}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Cấu trúc bảng dữ liệu Membership}{table.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Cấu trúc bảng dữ liệu Message}}{12}{table.caption.13}\protected@file@percent }
+\newlabel{tab:message}{{4}{12}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Cấu trúc bảng dữ liệu Message}{table.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Cấu trúc bảng dữ liệu MessageKey}}{13}{table.caption.14}\protected@file@percent }
+\newlabel{tab:messagekey}{{5}{13}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Cấu trúc bảng dữ liệu MessageKey}{table.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Cấu trúc bảng dữ liệu User}}{13}{table.caption.15}\protected@file@percent }
+\newlabel{tab:user}{{6}{13}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Cấu trúc bảng dữ liệu User}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Nguyên tắc bảo mật giữa các thành phần}{13}{subsubsection.0.2.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Môi trường và công cụ phát triển}{14}{subsubsection.0.2.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Quy trình bảo mật của hệ thống}{14}{subsection.0.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Tạo và lưu trữ cặp khóa RSA cho người dùng}{14}{subsubsection.0.2.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Mã hóa tin nhắn bằng AES trước khi gửi}{15}{subsubsection.0.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Trao đổi khóa AES qua kênh mã hóa RSA}{15}{subsubsection.0.2.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Giải mã tin nhắn ở phía người nhận}{15}{subsubsection.0.2.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.5}Bảo vệ khóa riêng tư và dữ liệu tin nhắn}{16}{subsubsection.0.2.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Giao diện và tính năng}{16}{subsection.0.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{III. PHẦN KẾT LUẬN}{17}{partsection.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.}Kết luận}{17}{subsection.0.0.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.}Hướng phát triển}{17}{subsection.0.0.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{TÀI LIỆU THAM KHẢO}{19}{subsection.0.0.5}\protected@file@percent }
 \ttl@finishall
 \abx@aux@read@bbl@mdfivesum{43AEF0B5BBEAEC49289FF67DFC14D0E6}
 \abx@aux@defaultrefcontext{0}{carranza2024}{nyt/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{chatterjee2018}{nyt/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{sabah2005}{nyt/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{tariq2023}{nyt/global//global/global/global}
-\gdef \@abspage@last{18}
+\gdef \@abspage@last{25}
