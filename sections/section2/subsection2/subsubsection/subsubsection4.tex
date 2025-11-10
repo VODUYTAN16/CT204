@@ -1,0 +1,16 @@
+\subsubsection{Giải mã tin nhắn ở phía người nhận}
+\hspace*{2em} Khi có tin nhắn mới được gửi đến, ứng dụng phía người nhận sẽ nhận sự kiện \texttt{"message"} thông qua kênh \textit{WebSocket}.  
+Dữ liệu nhận được bao gồm nội dung tin nhắn đã được mã hóa bằng \textbf{AES}, cùng với danh sách các khóa AES đã được mã hóa riêng cho từng người trong cuộc trò chuyện.
+
+\indent Ngay khi nhận sự kiện, ứng dụng kiểm tra xem tin nhắn có thuộc cuộc trò chuyện hiện tại của người dùng hay không.  
+Nếu đúng, hệ thống bắt đầu tiến trình giải mã. Đầu tiên, ứng dụng lấy khóa bí mật \textbf{RSA} của người dùng được lưu trữ an toàn trong vùng nhớ bảo mật của thiết bị (\textit{Flutter Secure Storage}).  
+Khóa này chỉ tồn tại cục bộ trên thiết bị người nhận và hoàn toàn không được máy chủ quản lý.
+
+\indent Tiếp theo, ứng dụng tìm trong danh sách \texttt{encryptedAesKeys} phần khóa AES được mã hóa dành riêng cho người nhận, được xác định thông qua trường \texttt{userId}.  
+Khi tìm thấy, ứng dụng sử dụng khóa bí mật \textbf{RSA} để giải mã khóa AES phiên tương ứng.  
+Khóa AES thu được sau khi giải mã sẽ được dùng để giải mã nội dung tin nhắn (\textit{ciphertext}), khôi phục lại chuỗi văn bản gốc mà người gửi đã nhập.
+
+\indent Trong trường hợp hiếm khi người nhận chưa có khóa AES tương ứng, hệ thống sẽ gọi API phụ \texttt{/messages/key} để truy vấn lại khóa mã hóa từ máy chủ.  
+Tuy nhiên, ngay cả trong tình huống này, chỉ thiết bị của người nhận mới có khả năng giải mã tin nhắn, vì chỉ nó mới sở hữu khóa bí mật \textbf{RSA} hợp lệ.
+
+\indent Kết quả cuối cùng là nội dung tin nhắn gốc được giải mã và hiển thị trong giao diện trò chuyện, hoàn tất vòng đời của một thông điệp được bảo vệ theo mô hình mã hóa đầu cuối (\textbf{E2EE}).

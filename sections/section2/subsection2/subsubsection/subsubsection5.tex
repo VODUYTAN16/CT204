@@ -1,0 +1,16 @@
+\subsubsection{Bảo vệ khóa riêng tư và dữ liệu tin nhắn}
+\hspace*{2em} Hệ thống áp dụng nhiều cơ chế bảo mật phối hợp để bảo vệ đồng thời khóa riêng tư của người dùng và dữ liệu trò chuyện trong suốt quá trình sử dụng.
+
+\indent Mỗi người dùng sau khi được khởi tạo cặp khóa \textbf{RSA} sẽ có khóa bí mật được lưu trữ an toàn trong vùng nhớ bảo mật riêng của thiết bị.  
+Cơ chế này dựa trên hạ tầng bảo mật của hệ điều hành, đảm bảo rằng khóa không thể bị truy cập, sao chép hay đọc bởi bất kỳ ứng dụng hoặc tiến trình nào khác.  
+Việc lưu trữ tách biệt này giúp ngăn ngừa nguy cơ rò rỉ khóa, ngay cả khi thiết bị bị tấn công ở cấp hệ thống tập tin.
+
+\indent Bên cạnh đó, toàn bộ quá trình mã hóa và giải mã đều diễn ra \textbf{cục bộ} trên thiết bị người dùng.  
+Tin nhắn được mã hóa hoàn toàn trước khi rời khỏi máy và chỉ được giải mã khi đến đúng thiết bị của người nhận.  
+Máy chủ chỉ đóng vai trò \textit{lưu trữ} và \textit{chuyển tiếp} dữ liệu đã mã hóa, không nắm giữ bất kỳ khóa bí mật nào và không thể đọc được nội dung trao đổi.  
+Thiết kế này giúp duy trì mô hình mã hóa đầu cuối đúng nghĩa.
+
+\indent Hệ thống cũng tăng cường tính an toàn bằng cách sử dụng \textbf{khóa AES phiên riêng biệt cho từng tin nhắn}, giúp hạn chế rủi ro khi một khóa bị lộ.  
+Nhờ đó, việc đánh cắp hoặc giải mã thành công một gói tin riêng lẻ sẽ không ảnh hưởng đến toàn bộ lịch sử trò chuyện.
+
+\indent Tổng thể, cơ chế này đảm bảo rằng khóa riêng tư của người dùng luôn được bảo vệ ở cấp thiết bị, và dữ liệu tin nhắn được bảo mật hoàn toàn cả trên đường truyền lẫn trong lưu trữ, phù hợp với các nguyên tắc bảo mật của hệ thống mã hóa đầu cuối hiện đại.

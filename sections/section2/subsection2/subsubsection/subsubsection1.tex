@@ -1,0 +1,11 @@
+\subsubsection{Tạo và lưu trữ cặp khóa RSA cho người dùng}
+\hspace*{2em} Mỗi người dùng trong hệ thống đều được khởi tạo một cặp khóa \textbf{RSA} riêng biệt, bao gồm khóa công khai và khóa bí mật.  
+Quá trình tạo khóa được thực hiện dựa trên bộ sinh số ngẫu nhiên an toàn, đảm bảo rằng mỗi cặp khóa là duy nhất và không thể dự đoán.  
+Sau khi được sinh ra, hai khóa được chuyển sang định dạng \texttt{PEM}, định dạng tiêu chuẩn trong lưu trữ và trao đổi thông tin mật mã, giúp chúng có thể được chia sẻ hoặc sử dụng trong các bước mã hóa tiếp theo mà vẫn đảm bảo tính tương thích.
+
+\indent Khóa \textbf{công khai} được chia sẻ với những người khác trong cuộc trò chuyện, cho phép họ mã hóa khóa phiên khi gửi tin nhắn đến người sở hữu.  
+Ngược lại, khóa \textbf{bí mật} chỉ được lưu trữ cục bộ trên thiết bị của người dùng, trong một vùng \textit{Flutter Secure Storage}.  
+Cơ chế lưu trữ này giúp ngăn chặn việc sao chép hoặc truy cập trái phép vào dữ liệu quan trọng, ngay cả khi thiết bị bị xâm nhập.
+
+\indent Nhờ quy trình trên, mỗi người dùng có một định danh mật mã độc lập, và toàn bộ hoạt động mã hóa – giải mã đều được thực hiện ở phía thiết bị.  
+Điều này đảm bảo rằng không bên trung gian nào, kể cả máy chủ, có khả năng đọc hoặc giải mã nội dung tin nhắn, đúng theo nguyên tắc bảo mật của mô hình mã hóa đầu cuối.
