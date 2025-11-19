@@ -77,6 +77,18 @@
 % =====================
 \usepackage{titletoc}
 
+\usepackage{caption}
+\DeclareCaptionFont{myfifteenfive}{\fontsize{15.5}{18.6}\selectfont}
+\captionsetup{%
+  font=myfifteenfive,
+  labelfont=bf,
+  textfont=it,
+  format=plain,
+  singlelinecheck=false,
+  skip=12pt
+}
+\captionsetup[figure]{justification=centering, position=bottom, labelsep=period}
+\captionsetup[table]{justification=raggedright, position=top, labelsep=period, skip=8pt}
 % ----- PHẦN (I, II, III, …) -----
 \newcounter{partsection}
 \renewcommand\thepartsection{\Roman{partsection}}
@@ -135,7 +147,6 @@
   \section*{\fontsize{16pt}{18pt}\selectfont #1}% đổi kích thước chữ
   \addcontentsline{toc}{section}{#1}% thêm vào mục lục
 }
-
 
 \begin{document}
 % ================ Title Page (no page number) ================
