@@ -1,7 +1,7 @@
 % 1.3.1
 \subsubsection{Giới thiệu bài báo “Secure Chat Application with an End-to-End Encryption”}
-\hspace*{2em} Bài báo “Secure Chat Application with an End-to-End Encryption” được trình bày tại Hội nghị Quốc tế lần thứ 10 về Kỹ thuật Điện, Hệ thống Máy tính và Khoa học Máy tính năm 2024 tại Barcelona, Tây Ban Nha. Công trình do Harrison Carranza, Miguel Bustamante, Aparicio Carranza và Suryaprakash Muniganti thực hiện, hướng đến việc xây dựng mô hình thử nghiệm cho ứng dụng trò chuyện bảo mật có khả năng mã hóa đầu cuối.
+\indent Bài báo “Secure Chat Application with an End-to-End Encryption” được trình bày tại Hội nghị Quốc tế lần thứ 10 về Kỹ thuật Điện, Hệ thống Máy tính và Khoa học Máy tính năm 2024 tại Barcelona, Tây Ban Nha. Công trình do Harrison Carranza, Miguel Bustamante, Aparicio Carranza và Suryaprakash Muniganti thực hiện, hướng đến việc xây dựng mô hình thử nghiệm cho ứng dụng trò chuyện bảo mật có khả năng mã hóa đầu cuối.
 
 \indent Bài báo không phát triển một hệ thống hoàn chỉnh, mà chủ yếu mô phỏng quy trình mã hóa và truyền tin giữa hai người dùng trong môi trường Python. Tác giả sử dụng socket TCP để tạo kết nối giữa máy chủ và máy khách đồng thời tích hợp giao diện người dùng đơn giản giúp kiểm chứng quá trình gửi và nhận tin nhắn.
 
-\indent Các thử nghiệm được thực hiện với công cụ Wireshark, cho thấy dữ liệu truyền đi ở dạng mã hóa thay vì văn bản thuần. Tuy nhiên, hệ thống trong bài báo chưa triển khai các cơ chế xác thực, quản lý khóa động hay bảo mật toàn vẹn dữ liệu.
+\indent Các thử nghiệm được thực hiện với công cụ Wireshark, cho thấy dữ liệu truyền đi ở dạng mã hóa thay vì văn bản thuần. Tuy nhiên, hệ thống trong bài báo chưa triển khai các cơ chế xác thực, quản lý khóa động hay bảo mật toàn vẹn dữ liệu. Mô hình mã hóa cũng chưa thật sự là mô hình mã hóa đầu cuối vì việc giải mã được thực hiện ở phía server sau đó gửi tin nhẵn đã giải mã cho người nhận.

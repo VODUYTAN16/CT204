@@ -1,6 +1,6 @@
 % 1.2.2
 \subsubsection{Thuật toán AES }
-\hspace*{2em} Thuật toán AES (Advanced Encryption Standard) là một trong những tiêu chuẩn mã hóa đối xứng được sử dụng rộng rãi nhất hiện nay, được công bố bởi Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ (NIST) vào năm 2001, thay thế cho DES (Data Encryption Standard) nhờ hiệu suất cao và độ bảo mật vượt trội. AES được phát triển bởi hai nhà mật mã học người Bỉ, Joan Daemen và Vincent Rijmen, dựa trên thuật toán Rijndael, và được thiết kế để xử lý các khối dữ liệu 128-bit với các độ dài khóa 128, 192, hoặc 256 bit.
+\indent Thuật toán AES (Advanced Encryption Standard) là một trong những tiêu chuẩn mã hóa đối xứng được sử dụng rộng rãi nhất hiện nay, được công bố bởi Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ (NIST) vào năm 2001, thay thế cho DES (Data Encryption Standard) nhờ hiệu suất cao và độ bảo mật vượt trội. AES được phát triển bởi hai nhà mật mã học người Bỉ, Joan Daemen và Vincent Rijmen, dựa trên thuật toán Rijndael, và được thiết kế để xử lý các khối dữ liệu 128-bit với các độ dài khóa 128, 192, hoặc 256 bit.
 
 \indent AES hoạt động dựa trên một quy trình mã hóa đối xứng, sử dụng cùng một khóa cho cả mã hóa và giải mã, với các vòng lặp (rounds) được thực hiện để tăng cường bảo mật. Các thành phần chính của AES bao gồm:
 
@@ -14,7 +14,7 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.85\textwidth]{figures/pic4.png}
+  \includegraphics[width=0.95\textwidth]{figures/pic4.png}
   \caption{Quy trình sinh khóa, mã hóa và giải mã trong thuật toán AES.}
   \label{fig:cdm4}
 \end{figure}
@@ -28,7 +28,7 @@
         \begin{itemize}
           \item \textbf{RotWord:} xoay trái một byte. 
           \item \textbf{SubWord:} thay thế từng byte theo bảng S-box.
-          \item \textbf{Rcon:} cộng thêm hằng số vòng để tăng tính ngẫu nhiên. 
+          \item \textbf{Rcon:} Xor với Rcon ở vị trí tương ứng và xor với cột cách trước đó 2 cột. 
         \end{itemize}
       \item Kết quả là một chuỗi khóa vòng được sử dụng lần lượt trong các bước AddRoundKey của từng vòng mã hóa.
     \end{itemize}
@@ -41,7 +41,7 @@
       
         \begin{figure}[H]
           \centering
-          \includegraphics[width=.85\textwidth]{figures/pic5.png}
+          \includegraphics[width=0.85\textwidth]{figures/pic5.png}
           \caption{Quy trình mã hóa AES tổng quát.}
           \label{fig:cdm5}
         \end{figure}
@@ -63,7 +63,7 @@
           \item \textbf{MixColumns:} Trộn các byte trong từng cột bằng phép nhân ma trận trong trường hữu hạn GF(2⁸), tăng độ khuếch tán (bỏ qua trong vòng cuối).
           \item \textbf{AddRoundKey:} Mỗi byte của State được XOR với byte tương ứng trong khóa vòng.
         \end{itemize}
-      \item Kết quả là một chuỗi khóa vòng được sử dụng lần lượt trong các bước AddRoundKey của từng vòng mã hóa.
+      \item Một chuỗi khóa vòng được sử dụng lần lượt trong các bước AddRoundKey của từng vòng mã hóa.
     \end{itemize}
 \textbf{Giai đoạn 3 – Giải mã (Decryption):} 
     \begin{itemize}

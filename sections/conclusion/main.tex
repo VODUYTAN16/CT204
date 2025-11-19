@@ -3,7 +3,7 @@
 \renewcommand{\thesubsection}{\arabic{subsection}.}
 
 \subsection{Kết luận}
-\hspace*{2em} Hệ thống được xây dựng với mục tiêu trở thành một nền tảng trò chuyện bảo mật theo mô hình mã hóa đầu cuối (End-to-End Encryption – E2EE), trong đó mọi dữ liệu đều được mã hóa trước khi rời khỏi thiết bị người dùng và chỉ được giải mã khi đến đúng người nhận. Cách tiếp cận này đảm bảo rằng máy chủ trung gian không thể đọc được nội dung trò chuyện, ngay cả khi hệ thống bị tấn công hay rò rỉ dữ liệu.
+\indent Hệ thống đã thành công với mục tiêu trở thành một nền tảng trò chuyện bảo mật theo mô hình mã hóa đầu cuối (End-to-End Encryption – E2EE), trong đó mọi dữ liệu đều được mã hóa trước khi rời khỏi thiết bị người dùng và chỉ được giải mã khi đến đúng người nhận. Cách tiếp cận này đảm bảo rằng máy chủ trung gian không thể đọc được nội dung trò chuyện, ngay cả khi hệ thống bị tấn công hay rò rỉ dữ liệu.
 
 \indent Về mặt kỹ thuật, hệ thống đã kết hợp hài hòa nhiều công nghệ hiện đại:
 \begin{itemize}
@@ -13,15 +13,15 @@
 
 \end{itemize}
 
-\indent Các nguyên tắc bảo mật như xác thực người dùng, kiểm soát truy cập, mã hóa kênh truyền, và bảo vệ khóa bí mật cục bộ đều được áp dụng đồng bộ để hình thành nền tảng an toàn toàn diện. Nhờ đó, hệ thống không chỉ đạt được các tiêu chí cơ bản của một ứng dụng chat hiện đại, mà còn đáp ứng yêu cầu của lĩnh vực An toàn và bảo mật thông tin về tính bí mật, toàn vẹn và xác thực.
+\indent Các nguyên tắc bảo mật như bảo vệ khóa bí mật cục bộ được áp dụng để hình thành nền tảng an toàn toàn diện. Nhờ đó, hệ thống không chỉ đạt được các tiêu chí cơ bản của một ứng dụng chat hiện đại, mà còn đáp ứng yêu cầu của lĩnh vực An toàn và bảo mật thông tin về tính bí mật, toàn vẹn và xác thực.
 
-\indent Bên cạnh đó, cấu trúc hệ thống được thiết kế linh hoạt, cho phép dễ dàng mở rộng để tích hợp thêm các tính năng nâng cao như chatbot thông minh, truyền file lớn, hoặc các mô-đun hỗ trợ AI mà vẫn đảm bảo duy trì lớp bảo mật đã được thiết lập. Đây là nền tảng tốt để phát triển thành sản phẩm hoàn thiện phục vụ nghiên cứu hoặc triển khai thực tế trong tương lai.
+\indent Bên cạnh đó, cấu trúc hệ thống được thiết kế linh hoạt, cho phép dễ dàng mở rộng để tích hợp thêm các tính năng nâng cao như chatbot thông minh, truyền file lớn hay hình ảnh. Đây là nền tảng tốt để phát triển thành sản phẩm hoàn thiện phục vụ nghiên cứu hoặc triển khai thực tế trong tương lai.
 
 \subsection{Hướng phát triển}
-\hspace*{2em} Mặc dù hệ thống hiện tại đã đạt được những yêu cầu cơ bản về bảo mật và truyền dữ liệu theo thời gian thực, vẫn còn nhiều hướng có thể tiếp tục phát triển để tăng mức độ an toàn, cải thiện trải nghiệm người dùng và mở rộng quy mô hệ thống. Một số hướng quan trọng bao gồm:
+\indent Mặc dù hệ thống hiện tại đã đạt được những yêu cầu cơ bản về bảo mật và truyền dữ liệu theo thời gian thực, vẫn còn nhiều hướng có thể tiếp tục phát triển để tăng mức độ an toàn, cải thiện trải nghiệm người dùng và mở rộng quy mô hệ thống. Một số hướng quan trọng bao gồm:
 
 \begin{itemize}
-  \item \textbf{Phát triển tính năng sao lưu và khôi phục khóa: } Hiện tại, khóa dùng để bảo vệ tin nhắn chỉ được lưu trên điện thoại của người dùng. Trong tương lai, hệ thống cần có cách để người dùng sao lưu hoặc khôi phục khóa khi đổi thiết bị mà vẫn giữ được tính riêng tư. Một hướng khả thi là cho phép người dùng đặt mật khẩu riêng để bảo vệ khóa, hoặc lưu tạm khóa trên máy chủ trong dạng đã được mã hóa an toàn.
+  \item \textbf{Phát triển tính năng sao lưu và khôi phục khóa: } Hiện tại, khóa dùng để bảo vệ tin nhắn chỉ được lưu trên điện thoại của người dùng. Trong tương lai, hệ thống cần có cách để người dùng sao lưu hoặc khôi phục khóa khi đổi thiết bị mà vẫn giữ được tính riêng tư. Lưu tạm khóa trên máy chủ trong dạng đã được mã hóa an toàn và đảm bảo đường truyền tin cậy có xác thực người dùng.
   \item \textbf{Bảo mật các loại dữ liệu khác ngoài tin nhắn:} Không chỉ tin nhắn văn bản, các dữ liệu khác như hình ảnh, video hay tài liệu cũng cần được mã hóa trước khi gửi hoặc lưu trữ. Điều này giúp đảm bảo rằng, ngay cả khi dữ liệu bị rò rỉ trên mạng hoặc dịch vụ lưu trữ, người ngoài vẫn không thể xem được nội dung thực tế.
   \item \textbf{Tăng cường an toàn cho đường truyền: } Khi triển khai thực tế, toàn bộ quá trình gửi – nhận dữ liệu giữa ứng dụng và máy chủ cần được bảo vệ bằng đường truyền an toàn, tránh bị nghe lén hay giả mạo. Ngoài ra, mọi yêu cầu từ ứng dụng đến máy chủ phải được xác minh kỹ, để đảm bảo chỉ các ứng dụng hợp lệ mới được phép kết nối.
   \item \textbf{Cải thiện trải nghiệm người dùng gắn liền với bảo mật: } Ứng dụng có thể hiển thị thông báo hoặc biểu tượng giúp người dùng dễ dàng nhận biết trạng thái bảo mật của cuộc trò chuyện. Khi người dùng thực hiện các hành động có thể làm mất khả năng đọc tin nhắn cũ (như xóa khóa hoặc thay đổi thiết bị), hệ thống nên cảnh báo rõ ràng. Đồng thời, nên cung cấp tùy chọn tự động xóa tin nhắn sau một thời gian để bảo vệ quyền riêng tư.

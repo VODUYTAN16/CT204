@@ -48,91 +48,99 @@
       \field{title}{Secure Chat Application with an End-to-End Encryption}
       \field{year}{2024}
     \endentry
-    \entry{chatterjee2018}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=65b0ab891cb261511f9c912fb42bd1ca}{%
-           family={Chatterjee},
-           familyi={C\bibinitperiod},
-           given={N.},
-           giveni={N\bibinitperiod}}}%
-        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
-           family={al.},
-           familyi={a\bibinitperiod},
-           prefix={et},
-           prefixi={e\bibinitperiod}}}%
+    \entry{dart_spec}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7b568e72d25af32b0cec03e49cbf3f70}{%
+           family={{Google LLC}},
+           familyi={G\bibinitperiod}}}%
       }
-      \strng{namehash}{371e7106cc6d7b20c3991ddfd7de5f3d}
-      \strng{fullhash}{371e7106cc6d7b20c3991ddfd7de5f3d}
-      \strng{fullhashraw}{371e7106cc6d7b20c3991ddfd7de5f3d}
-      \strng{bibnamehash}{371e7106cc6d7b20c3991ddfd7de5f3d}
-      \strng{authorbibnamehash}{371e7106cc6d7b20c3991ddfd7de5f3d}
-      \strng{authornamehash}{371e7106cc6d7b20c3991ddfd7de5f3d}
-      \strng{authorfullhash}{371e7106cc6d7b20c3991ddfd7de5f3d}
-      \strng{authorfullhashraw}{371e7106cc6d7b20c3991ddfd7de5f3d}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \strng{namehash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{fullhash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{fullhashraw}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{bibnamehash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{authorbibnamehash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{authornamehash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{authorfullhash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{authorfullhashraw}{7b568e72d25af32b0cec03e49cbf3f70}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{International Journal of Advance Research in Computer Science and Management Studies}
-      \field{title}{Real-time Communication Application Based on Android Using Google Firebase}
-      \field{year}{2018}
+      \field{howpublished}{\url{https://dart.dev/guides/language}}
+      \field{note}{Accessed: 2024-11-19}
+      \field{title}{Dart Language Specification}
+      \field{year}{2024}
     \endentry
-    \entry{sabah2005}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=f4fa2fbe5cdbb61438c59fd4c97a9438}{%
-           family={Sabah},
-           familyi={S\bibinitperiod},
-           given={N.},
-           giveni={N\bibinitperiod}}}%
-        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
-           family={al.},
-           familyi={a\bibinitperiod},
-           prefix={et},
-           prefixi={e\bibinitperiod}}}%
+    \entry{flutter_doc}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7b568e72d25af32b0cec03e49cbf3f70}{%
+           family={{Google LLC}},
+           familyi={G\bibinitperiod}}}%
       }
-      \strng{namehash}{c2b2aaa355318ede1ac050ab91cfd021}
-      \strng{fullhash}{c2b2aaa355318ede1ac050ab91cfd021}
-      \strng{fullhashraw}{c2b2aaa355318ede1ac050ab91cfd021}
-      \strng{bibnamehash}{c2b2aaa355318ede1ac050ab91cfd021}
-      \strng{authorbibnamehash}{c2b2aaa355318ede1ac050ab91cfd021}
-      \strng{authornamehash}{c2b2aaa355318ede1ac050ab91cfd021}
-      \strng{authorfullhash}{c2b2aaa355318ede1ac050ab91cfd021}
-      \strng{authorfullhashraw}{c2b2aaa355318ede1ac050ab91cfd021}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \strng{namehash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{fullhash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{fullhashraw}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{bibnamehash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{authorbibnamehash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{authornamehash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{authorfullhash}{7b568e72d25af32b0cec03e49cbf3f70}
+      \strng{authorfullhashraw}{7b568e72d25af32b0cec03e49cbf3f70}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Developing an End-to-End Secure Chat Application}
-      \field{year}{2005}
+      \field{howpublished}{\url{https://docs.flutter.dev}}
+      \field{note}{Accessed: 2024-11-19}
+      \field{title}{Flutter Documentation}
+      \field{year}{2024}
     \endentry
-    \entry{tariq2023}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=767ae3ee507b063f24503f48db520001}{%
-           family={Tariq},
-           familyi={T\bibinitperiod},
-           given={U.},
-           giveni={U\bibinitperiod}}}%
-        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
-           family={al.},
-           familyi={a\bibinitperiod},
-           prefix={et},
-           prefixi={e\bibinitperiod}}}%
+    \entry{mongodb_doc}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=1ac6d614186c0e0c6ded2e295019b862}{%
+           family={{MongoDB Inc.}},
+           familyi={M\bibinitperiod}}}%
       }
-      \strng{namehash}{6799e0ea5ef5f65bc5b748480a6fb279}
-      \strng{fullhash}{6799e0ea5ef5f65bc5b748480a6fb279}
-      \strng{fullhashraw}{6799e0ea5ef5f65bc5b748480a6fb279}
-      \strng{bibnamehash}{6799e0ea5ef5f65bc5b748480a6fb279}
-      \strng{authorbibnamehash}{6799e0ea5ef5f65bc5b748480a6fb279}
-      \strng{authornamehash}{6799e0ea5ef5f65bc5b748480a6fb279}
-      \strng{authorfullhash}{6799e0ea5ef5f65bc5b748480a6fb279}
-      \strng{authorfullhashraw}{6799e0ea5ef5f65bc5b748480a6fb279}
-      \field{sortinit}{T}
-      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \strng{namehash}{1ac6d614186c0e0c6ded2e295019b862}
+      \strng{fullhash}{1ac6d614186c0e0c6ded2e295019b862}
+      \strng{fullhashraw}{1ac6d614186c0e0c6ded2e295019b862}
+      \strng{bibnamehash}{1ac6d614186c0e0c6ded2e295019b862}
+      \strng{authorbibnamehash}{1ac6d614186c0e0c6ded2e295019b862}
+      \strng{authornamehash}{1ac6d614186c0e0c6ded2e295019b862}
+      \strng{authorfullhash}{1ac6d614186c0e0c6ded2e295019b862}
+      \strng{authorfullhashraw}{1ac6d614186c0e0c6ded2e295019b862}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Sensors}
-      \field{title}{A Critical Cybersecurity Analysis and Future Research Directions for the Internet of Things}
-      \field{year}{2023}
+      \field{howpublished}{\url{https://www.mongodb.com/docs/}}
+      \field{note}{Accessed: 2024-11-19}
+      \field{title}{MongoDB Manual}
+      \field{year}{2024}
+    \endentry
+    \entry{nodejs_website}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=6f965774e9941cd00d986a26eaeac316}{%
+           family={{Node.js Foundation}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{6f965774e9941cd00d986a26eaeac316}
+      \strng{fullhash}{6f965774e9941cd00d986a26eaeac316}
+      \strng{fullhashraw}{6f965774e9941cd00d986a26eaeac316}
+      \strng{bibnamehash}{6f965774e9941cd00d986a26eaeac316}
+      \strng{authorbibnamehash}{6f965774e9941cd00d986a26eaeac316}
+      \strng{authornamehash}{6f965774e9941cd00d986a26eaeac316}
+      \strng{authorfullhash}{6f965774e9941cd00d986a26eaeac316}
+      \strng{authorfullhashraw}{6f965774e9941cd00d986a26eaeac316}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://nodejs.org/en}}
+      \field{note}{Accessed: 2025-01-01}
+      \field{title}{Node.js Official Website}
+      \field{year}{2024}
     \endentry
   \enddatalist
 \endrefsection

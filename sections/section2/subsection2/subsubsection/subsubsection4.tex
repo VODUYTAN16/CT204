@@ -1,5 +1,5 @@
 \subsubsection{Giải mã tin nhắn ở phía người nhận}
-\hspace*{2em} Khi có tin nhắn mới được gửi đến, ứng dụng phía người nhận sẽ nhận sự kiện \texttt{"message"} thông qua kênh \textit{WebSocket}.  
+\indent Khi có tin nhắn mới được gửi đến, ứng dụng phía người nhận sẽ nhận sự kiện \texttt{"message"} thông qua kênh \textit{WebSocket}.  
 Dữ liệu nhận được bao gồm nội dung tin nhắn đã được mã hóa bằng \textbf{AES}, cùng với danh sách các khóa AES đã được mã hóa riêng cho từng người trong cuộc trò chuyện.
 
 \indent Ngay khi nhận sự kiện, ứng dụng kiểm tra xem tin nhắn có thuộc cuộc trò chuyện hiện tại của người dùng hay không.  

@@ -1,13 +1,13 @@
 % 1.3.2
 \subsubsection{Cơ chế bảo mật trong bài báo}
-\hspace*{2em} Mô hình trong bài báo triển khai mã hóa lai đề xuất quy trình mã hóa nhiều lớp nhằm bảo đảm tính bí mật và toàn vẹn của dữ liệu trong quá trình truyền gồm các bước:
+\indent Mô hình trong bài báo triển khai mã hóa lai đề xuất quy trình mã hóa nhiều lớp nhằm bảo đảm tính bí mật và toàn vẹn của dữ liệu trong quá trình truyền gồm các bước:
 \begin{itemize}
-    \item \textbf{Sinh khóa RSA: } Ứng dụng tự động tạo cặp khóa công khai – bí mật để trao đổi an toàn.
+    \item \textbf{Sinh khóa RSA: } Ứng dụng tự động tạo cặp khóa công khai – bí mật để trao đổi khóa an toàn.
     \item \textbf{Trao đổi khóa phiên (session key): } Khóa AES ngẫu nhiên được mã hóa bằng khóa công khai RSA của người nhận, bảo đảm an toàn khi truyền đi.
     
-    \item \textbf{Mã hóa tin nhắn bằng AES: } Các nội dung trò chuyện được mã hóa bằng AES ở chế độ Cipher Block Chaining (CBC) để ngăn chặn lộ mẫu dữ liệu.
+    \item \textbf{Mã hóa tin nhắn bằng AES: } Các nội dung trò chuyện được mã hóa bằng khóa AES để ngăn chặn lộ tin nhắn gốc.
     
-    \item \textbf{Lưu trữ lịch sử trò chuyện được mã hóa: } Mọi nội dung lưu trong file chat\_history.txt đều ở dạng mã hóa, chỉ giải mã được khi có khóa hợp lệ.
+    \item \textbf{Lưu trữ lịch sử trò chuyện được mã hóa: } Mọi nội dung trong lịch sử trò chuyện đều ở dạng mã hóa, chỉ giải mã được khi có khóa hợp lệ.
 
 \end{itemize}
 

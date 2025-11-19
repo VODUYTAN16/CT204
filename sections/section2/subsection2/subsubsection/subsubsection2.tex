@@ -1,5 +1,5 @@
 \subsubsection{Mã hóa tin nhắn bằng AES trước khi gửi}
-\hspace*{2em} Trước khi một tin nhắn được gửi đi, hệ thống tiến hành mã hóa nội dung bằng thuật toán \textbf{AES} nhằm đảm bảo tính bí mật trong quá trình truyền tải.  
+\indent Trước khi một tin nhắn được gửi đi, hệ thống tiến hành mã hóa nội dung bằng thuật toán \textbf{AES} nhằm đảm bảo tính bí mật trong quá trình truyền tải.  
 Khi người dùng nhập nội dung và nhấn gửi, ứng dụng sẽ sinh ra một khóa AES ngẫu nhiên cho từng tin nhắn.  
 Khóa này được biểu diễn ở dạng \texttt{Base64} để có thể truyền qua mạng và lưu trữ dễ dàng.  
 Sau đó, hệ thống tạo \textit{vector khởi tạo} (\textbf{IV}) ngẫu nhiên có độ dài 16 byte nhằm đảm bảo rằng cùng một nội dung nhưng được mã hóa nhiều lần vẫn cho ra kết quả hoàn toàn khác nhau, tránh việc suy luận mẫu dữ liệu.
@@ -8,7 +8,7 @@ Sau đó, hệ thống tạo \textit{vector khởi tạo} (\textbf{IV}) ngẫu n
 Chế độ này giúp đảm bảo độ an toàn cao và tương thích với các chuẩn mã hóa hiện nay.  
 Kết quả mã hóa là một chuỗi byte được ghép cùng IV rồi chuyển sang dạng \texttt{Base64} trước khi gửi đi.
 
-\indent Quá trình này được thực hiện hoàn toàn cục bộ trên thiết bị của người gửi, không có dữ liệu bản rõ nào được gửi tới máy chủ.  
-Sau khi mã hóa xong, nội dung tin nhắn (\textit{ciphertext}) được đóng gói và gửi lên \textit{backend} kèm theo danh sách khóa AES đã được mã hóa riêng cho từng người nhận.
+\indent Quá trình này được thực hiện hoàn toàn cục bộ trên thiết bị của người gửi.  
+Sau khi mã hóa xong, nội dung tin nhắn (\textit{ciphertext}) được đóng gói và gửi lên \textit{backend} kèm theo danh sách khóa AES đã được mã hóa bằng khóa công khai của từng người nhận.
 
 \indent Nhờ cơ chế này, toàn bộ nội dung trò chuyện đều được mã hóa trước khi rời khỏi thiết bị, đảm bảo rằng ngay cả máy chủ trung gian cũng không thể đọc hoặc giải mã tin nhắn của người dùng.

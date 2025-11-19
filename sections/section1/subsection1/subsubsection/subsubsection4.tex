@@ -1,15 +1,15 @@
 % 1.1.4
 \subsubsection{Khái quát về mô hình mã hóa đầu cuối}
-\hspace*{2em} Mô hình mã hóa đầu cuối (End-to-End Encryption) là một phương pháp bảo mật dữ liệu, đảm bảo rằng thông tin được mã hóa tại thiết bị gửi và chỉ được giải mã tại thiết bị nhận, ngăn chặn bất kỳ bên thứ ba nào, kể cả nhà cung cấp dịch vụ, truy cập nội dung.
+\indent Mô hình mã hóa đầu cuối (End-to-End Encryption) là một phương pháp bảo mật dữ liệu, đảm bảo rằng thông tin được mã hóa tại thiết bị gửi và chỉ được giải mã tại thiết bị nhận, ngăn chặn bất kỳ bên thứ ba nào, kể cả nhà cung cấp dịch vụ, truy cập nội dung.
 
 \indent Cách hoạt động:
 \begin{itemize}
   \item Người gửi sử dụng khóa mã hóa (thường là khóa công khai của người nhận) để mã hóa dữ liệu ngay trên thiết bị người gửi.
 
 
-  \item Dữ liệu mã hóa đi qua mạng, có thể qua máy chủ trung gian nhưng dưới dạng ciphertext và máy chủ không có quyền giải mã.
+  \item Dữ liệu mã hóa đi qua mạng, có thể qua máy chủ trung gian nhưng dưới dạng ciphertext và máy chủ không thể giải mã vì không có khóa bí mật tương ứng.
 
-  \item Khi đến thiết bị người nhận, dữ liệu được giải mã bằng khóa bí mật tương ứng và chuyển thành nội dung đọc được.
+  \item Khi đến thiết bị người nhận, dữ liệu được giải mã bằng khóa bí mật tương ứng và chuyển thành nội dung mà người gửi muốn truyền tải qua mạng.
 \end{itemize}
 
-\indent Mô hình mã hóa đầu cuối mang lại mức độ bảo mật cao. Tuy nhiên, mô hình này cũng có hạn chế như việc quản lý và phân phối khóa phức tạp, dễ phát sinh lỗi nếu người dùng không xác minh khóa đúng cách. Ngoài ra, nếu thiết bị đầu cuối bị tấn công hoặc nhiễm mã độc, nội dung vẫn có thể bị lộ dù quá trình truyền hoàn toàn an toàn.
+\indent Mô hình mã hóa đầu cuối mang lại mức độ bảo mật cao. Tuy nhiên, mô hình này cũng có hạn chế như việc quản lý và phân phối khóa phức tạp, dễ phát sinh lỗi nếu người dùng không xác minh khóa đúng cách. Ngoài ra, nếu thiết bị đầu cuối bị tấn công hoặc nhiễm mã độc, nội dung vẫn có thể bị lộ hay bị chỉnh sửa dù quá trình truyền hoàn toàn an toàn. Một vấn đề quan trọng trong phương pháp này là làm thế nào để máy gửi và máy nhận tạo lòng tin với nhau để trao đổi khóa công khai mà đảm bảo không bị đánh tráo hay bị chỉnh sửa khóa.

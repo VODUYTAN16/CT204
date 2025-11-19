@@ -1,5 +1,7 @@
 Cài extention: LateX Workshop của james Yu
 Chạy bằng lệnh: latexmk -xelatex main.tex
+Lệnh này tự động update khi save: latexmk -xelatex -pvc main.tex
+
 
 QUY TRÌNH PULL CODE:
 Clone code từ github

@@ -1,8 +1,8 @@
 \subsubsection{Trao đổi khóa AES qua kênh mã hóa RSA}
-\hspace*{2em} Sau khi hoàn tất quá trình mã hóa nội dung tin nhắn bằng \textbf{AES}, ứng dụng cần gửi khóa AES này cho những người nhận trong cuộc trò chuyện để họ có thể tiến hành giải mã.  
+\indent Sau khi hoàn tất quá trình mã hóa nội dung tin nhắn bằng \textbf{AES}, ứng dụng cần gửi khóa AES này cho những người nhận trong cuộc trò chuyện để họ có thể tiến hành giải mã.  
 Tuy nhiên, nếu gửi trực tiếp khóa AES thì sẽ tiềm ẩn rủi ro lộ thông tin. Vì vậy, hệ thống áp dụng cơ chế mã hóa bất đối xứng \textbf{RSA} để bảo vệ khóa phiên trước khi truyền đi.
 
-\indent Trước khi gửi tin nhắn, ứng dụng gửi yêu cầu đến máy chủ để lấy danh sách thành viên của cuộc trò chuyện, bao gồm khóa công khai \textbf{RSA} của từng người.  
+\indent Trước khi gửi tin nhắn, ứng dụng gửi yêu cầu đến máy chủ để lấy danh sách thành viên của cuộc trò chuyện, bao gồm khóa công khai \textbf{RSA} của từng nhận.  
 Với khóa công khai này, ứng dụng tiến hành mã hóa khóa AES phiên riêng biệt cho từng thành viên.  
 Cụ thể, cùng một khóa AES sẽ được mã hóa nhiều lần, mỗi lần bằng khóa công khai của một người nhận khác nhau.
 

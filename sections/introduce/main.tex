@@ -1,0 +1,25 @@
+% sections/subsection1/main.tex
+\setcounter{section}{0}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+
+\subsection{Đặt vấn đề}
+\indent Trong thời đại số hóa hiện nay, giao tiếp trực tuyến đã trở thành một phần không thể thiếu trong cuộc sống hàng ngày, từ mạng xã hội, công cụ làm việc như Zalo hay Microsoft Teams đến tin nhắn truyền thống SMS trên điện thoại thông minh. Tuy nhiên, sự gia tăng của các mối đe dọa an ninh mạng, bao gồm tin tặc, tổ chức không được ủy quyền và các cuộc tấn công kiểu "người trung gian", đã đặt ra nhu cầu cấp thiết về việc bảo mật dữ liệu người dùng. Các nghiên cứu gần đây, như bài báo "Secure Chat Application with an End-to-End Encryption" (CIST 140) \cite{carranza2024}, chỉ ra rằng mã hóa đầu cuối là giải pháp quan trọng để bảo vệ quyền riêng tư và toàn vẹn thông tin. Đề tài "Ứng dụng RSA và AES trong phát triển hệ thống nhắn tin bảo mật" được lựa chọn nhằm đáp ứng nhu cầu này, tận dụng sức mạnh của các thuật toán mã hóa tiên tiến để xây dựng một ứng dụng nhắn tin an toàn, hiệu quả và thân thiện với người dùng, đồng thời góp phần nâng cao nhận thức về bảo mật trong việc giao tiếp qua mạng.
+\subsection{ Mục tiêu}
+\indent Mục tiêu của đề tài này là:
+\begin{itemize}
+  \item \textbf{Phát triển hệ thống nhắn tin với mã hóa đầu cuối:} 
+  Dựa trên mô hình của CIST 140, tham khảo, ứng dụng và hoàn thiện mô hình mã hóa đầu cuối để đảm bảo việc mã hóa và giải mã chỉ thực hiện ở máy gửi hay máy nhận, giúp đảm bảo an toàn trong quá trình truyền tải thông tin qua mạng. \cite{carranza2024}.
+
+  \item \textbf{Tích hợp RSA và AES:} 
+  Tham chiếu từ phương pháp luận của CIST 140, kết hợp RSA cho khóa bất đối xứng và AES cho khóa đối xứng. Trong đó, RSA sẽ thực hiện trao đổi khóa an toàn và AES để mã hóa nội dung tin nhắn.
+
+  \item \textbf{Xây dựng GUI thân thiện:} 
+  Sử dụng giao diện app Flutter \cite{flutter_doc} để tăng tính trải nghiệm cho người dùng, giao diện thân thiện dễ sử dụng giúp thuận tiện trong việc trao đổi thông tin qua mạng như các app khác như Zalo, Messenger hay Telegram.
+  
+  \item \textbf{Cơ sở dữ liệu:}
+  Sử dụng cơ sở dữ liệu NoSQL MongoDB \cite{mongodb_doc} để lưu các khóa public key của người dùng, lưu tin nhắn đã mã hóa và các thông tin khác có liên quan.
+\end{itemize}
+
+\subsection{Phạm vi nghiên cứu}
+\indent Phạm vi nghiên cứu tập trung vào việc thiết kế và phát triển một ứng dụng nhắn tin bảo mật sử dụng Flutter, tích hợp mã hóa văn bản thông qua sự kết hợp của RSA và AES, kết nối qua Websocket, đề tài có giới hạn ở việc chỉ hỗ trợ nhắn tin văn bản, không bao gồm các tính năng đa phương tiện như hình ảnh hoặc video, và chỉ triển khai trong môi trường cục bộ (localhost). Đề tài cũng không bao gồm vấn đề xác thực khóa công khai khi trao đổi khóa.
+

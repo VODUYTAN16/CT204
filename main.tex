@@ -1,6 +1,6 @@
 
 % !TEX program = xelatex
-\documentclass[13pt,a4paper]{extreport} % 13pt via extsizes
+\documentclass[16pt,a4paper]{extreport} % 16pt via extsizes
 
 % =====================
 % Fonts & Vietnamese
@@ -23,7 +23,10 @@
 ]{geometry}
 
 \usepackage{setspace}
-\setstretch{1.3} % line spacing 1.3
+\setstretch{1.3}        % khoảng cách dòng
+\setlength{\parindent}{2em} % thụt đầu dòng
+\setlength{\parskip}{0pt}   % không thêm khoảng trống giữa các đoạn
+
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{subcaption}
@@ -41,9 +44,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{tikz}
 \usepackage{etoolbox}
-
-% Paragraph indent = 2.14 inches
-\setlength{\parindent}{2em}
+\usepackage{ragged2e}       % trong preamble
 
 % =====================
 % Hyperlinks & ToC
@@ -81,26 +82,30 @@
 \renewcommand\thepartsection{\Roman{partsection}}
 \newcommand{\partsection}[1]{%
   \refstepcounter{partsection}
-  \section*{\centering \Large \bfseries \thepartsection. PHẦN #1}
+  \section*{\centering \fontsize{18}{22}\bfseries \thepartsection. PHẦN #1}
   \addcontentsline{toc}{section}{\thepartsection. PHẦN #1}
 }
 
 % ----- CHƯƠNG (1, 2, 3, …) -----
 \renewcommand\thesection{\arabic{section}}
 \titleformat{\section}
-  {\bfseries\centering\large\selectfont}
+  {\centering\bfseries\fontsize{18}{22}\selectfont} % <-- 18pt
   {CHƯƠNG~\thesection.}{1em}{\MakeUppercase}
 
 % ----- MỤC CON (1.1, 1.2, …) -----
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \titleformat{\subsection}
-  {\bfseries\normalsize}{\thesubsection}{1em}{}
+  {\bfseries\fontsize{17}{6}}{\thesubsection}{1em}{} % <-- 16pt
 
 % ----- TIỂU MỤC (1.1.1, 1.1.2, …) -----
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
 \titleformat{\subsubsection}
-  {\bfseries\normalsize}{\thesubsubsection}{1em}{}
+  {\bfseries\fontsize{17}{6}}{\thesubsubsection}{1em}{} % <-- 16pt
 
+
+\titlespacing{\section}{0pt}{0pt}{10pt}
+\titlespacing{\subsection}{0pt}{0pt}{6pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{6pt}
 
 % Start each \partsection on a new page
 \pretocmd{\partsection}{\clearpage}{}{} % requires etoolbox
@@ -143,34 +148,42 @@
 
 \vspace*{-1.2cm}
 \begin{center}
-  {\large \textbf\ministry \par}
-  {\large \textbf\university \par}
-  {\large \textbf\school \par}
-  \vspace{8pt}
-  \rule{2cm}{0.6pt}\,\rule{0.9cm}{0pt}\rule{2cm}{0.6pt}
-  \vspace{1.4cm}
+{\fontsize{16}{18}\selectfont \textbf{\ministry} \par}
+{\fontsize{16}{18}\selectfont \textbf{\university} \par}
+{\fontsize{16}{18}\selectfont \textbf{\school} \par}
 
-  \includegraphics[width=4.2cm]{figures/logo.png}
+\vspace{8pt}
+\rule{2cm}{0.6pt}\,\rule{0.9cm}{0pt}\rule{2cm}{0.6pt}
+\vspace{1.4cm}
 
-  \vspace{1.4cm}
-  {\large \textbf\department \par}
+\includegraphics[width=4.2cm]{figures/logo.png}
 
-  \vspace{1.2cm}
-  {\Large \textbf{Đề tài} \par}
-  \vspace{4pt}
-  {\Large \bfseries \MakeUppercase{\titletext} \par}
+\vspace{1.4cm}
+{\fontsize{20}{24}\selectfont \textbf{\department} \par}
 
-  \vspace{2.5cm}
+\vspace{1.2cm}
+{\fontsize{20}{26}\selectfont \textbf{Đề tài} \par}
+\vspace{4pt}
+{\fontsize{20}{26}\selectfont \bfseries \MakeUppercase{\titletext} \par}
+
+\vspace{2.5cm}
+  
+{\fontsize{15}{18}\selectfont
+\renewcommand{\arraystretch}{0.8}
+\setlength{\extrarowheight}{0pt}
 \begin{center}
 \begin{tabularx}{0.9\textwidth}{%
-  >{\raggedright\arraybackslash}X
-  >{\raggedright\arraybackslash}X}
+>{\raggedright\arraybackslash}p{0.4\textwidth}
+>{\raggedright\arraybackslash}p{0.6\textwidth}
+}
 \textbf{Giảng viên hướng dẫn:} & \textbf{Sinh viên thực hiện:} \\
-Thạc sĩ Phan Bích Chung                        & B2207561 -- Võ Duy Tân \\
-                                & B2207529 -- Đào Thị Kim Khánh                   \\
-                                & B2207575 -- Nguyễn Thị Thanh Tuyền                   \\
+Thạc sĩ Phan Bích Chung        & B2207561 -- Võ Duy Tân \\
+                                & B2207529 -- Đào Thị Kim Khánh \\
+                                & B2207575 -- Nguyễn Thị Thanh Tuyền \\
 \end{tabularx}
 \end{center}
+}
+
 
 
   \vfill
@@ -178,20 +191,28 @@ Thạc sĩ Phan Bích Chung                        & B2207561 -- Võ Duy Tân \\
 \end{center}
 \end{titlepage}
 
+\renewcommand{\normalsize}{\fontsize{15}{20}\selectfont}
+
 % ================ Page numbering for front matter ================
 \pagenumbering{roman} % i, ii, iii, ...
 \setcounter{page}{1}
 
 % ================ Front Matter ================
-\section*{\centering \fontsize{16pt}{18pt}\selectfont \textbf{LỜI CẢM ƠN}}
+\section*{\centering \fontsize{18pt}{18pt}\selectfont \textbf{LỜI CẢM ƠN}}
 \addcontentsline{toc}{section}{LỜI CẢM ƠN}
+{\normalsize
 \input{sections/thanks/thanks}
+}
+
 % TODO: Viết lời cảm ơn.
 \clearpage
-
 {%
-  \renewcommand{\contentsname}{\centering\fontsize{16pt}{18pt}\selectfont MỤC LỤC}%
-  \tableofcontents
+  \renewcommand{\contentsname}{\centering\fontsize{18pt}{0pt}\selectfont MỤC LỤC}%
+  {\normalsize
+    \tableofcontents
+}
+
+
   \addcontentsline{toc}{section}{MỤC LỤC}%
   \markboth{}{}%
 }
@@ -199,36 +220,62 @@ Thạc sĩ Phan Bích Chung                        & B2207561 -- Võ Duy Tân \\
 \clearpage
 
 {%
-   \renewcommand{\listfigurename}{\centering\fontsize{16pt}{18pt}\selectfont DANH MỤC HÌNH}%
-  \listoffigures
+   \renewcommand{\listfigurename}{\centering\fontsize{18pt}{6pt}\selectfont DANH MỤC HÌNH}%
+  {\normalsize
+     \listoffigures
+}
+
   \addcontentsline{toc}{section}{DANH MỤC HÌNH}%
   \markboth{}{}%
 }
 \clearpage
 
 {%
-  \renewcommand{\listtablename}{\centering\fontsize{16pt}{18pt}\selectfont {DANH MỤC BẢNG}%
-  \listoftables
+  \renewcommand{\listtablename}{\centering\fontsize{18pt}{6pt}\selectfont {DANH MỤC BẢNG}}%
+
+  {\normalsize
+    \listoftables
+}
   \addcontentsline{toc}{section}{DANH MỤC BẢNG}%
   \markboth{}{}%
 }
 \clearpage
 
 
-\section*{\centering \fontsize{16pt}{18pt}\selectfont \textbf{ABSTRACT}}
-\addcontentsline{toc}{section}{ABSTRACT}
-\input{sections/abstract-en/main}
+\section*{\centering \fontsize{18pt}{18pt}\selectfont \textbf{DANH MỤC TỪ VIẾT TẮT}}
+\addcontentsline{toc}{section}{DANH MỤC TỪ VIẾT TẮT}
+{\normalsize
+  \input{sections/acronyms/main.tex}
+}
+
 \clearpage
 
-\section*{TÓM TẮT}
+\section*{\centering \fontsize{18pt}{18pt}\selectfont \textbf{ABSTRACT}}
+\addcontentsline{toc}{section}{ABSTRACT}
+
+\begin{minipage}{\textwidth}
+\justifying
+
+\input{sections/abstract-en/main}
+\end{minipage}
+
+
+\clearpage
+
+\section*{\centering \fontsize{18pt}{18pt}\selectfont \textbf{TÓM TẮT}}
 \addcontentsline{toc}{section}{TÓM TẮT}
-\input{sections/abstract-vi/main}
+{\normalsize
+  \input{sections/abstract-vi/main}
+}
+
 % Switch to arabic numbering from the first chapter
 \clearpage
 \pagenumbering{arabic} % 1, 2, 3, ...
 \setcounter{page}{1}
+{\normalsize
+  \input{sections/main}
+}
 
-\input{sections/main}
 
 % ================ References ================
 \clearpage
